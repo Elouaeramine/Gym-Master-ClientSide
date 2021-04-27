@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+ 
   constructor() { }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(){
+}
+loginForm = new FormGroup({
+fname : new FormControl(['', Validators.required])
+})
+onSubmit() {
+  // TODO: Use EventEmitter with form value
+  console.warn(this.loginForm.value);
+}
 }
