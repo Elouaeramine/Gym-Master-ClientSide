@@ -1,3 +1,5 @@
-input.ng-invalid{
-    border-color: red;
-}
+input.ng-invalid.ng-touched {
+    border-color: red ;
+    // border-width: 96 ;
+    // border-style: rounded;
+  }

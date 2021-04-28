@@ -1,51 +1,118 @@
-<div class="block box-content h-96  p-4 bg-black self-center">
-<div class="text-white m-16">
-    <div class="font-Poppins text-5xl">Join</div> 
-    <div class="font-Poppins text-8xl">US!</div> <br>
+<div class="block box-content h-96  p-4 bg-cod-gray-500 self-center">
+<div class="font-poppins text-white m-16">
+    <div class="text-5xl">Join</div> 
+    <div class="text-8xl">US!</div> <br>
     <hr class="border-4 w-32"> <br>
-    <div class="font-Poppins text-sm w-96">Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium totam rem 
+    <div class="text-sm w-96">Sed ut perspiciatis unde omnisiste natus error sit voluptatem accusantium doloremque laudantium totam rem 
         aperiam eaque ipsa quae ab illo inventore architecto beatae
     </div>
 </div>
 </div>
 
-<div class="flex flex-wrap justify-items-center">
+<div class=" font-poppins flex flex-wrap justify-items-center">
 <div class="m-32 flex-1 self-center">
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-     <label for="fname" class="font-medium text-base font-Poppins">First name</label><br>
+  <form>
+
+     <label for="fname" class="font-medium text-base">First name</label><br>
       <input
-      formControlName="fname" required
-      type="text" id="fname" name="fname" placeholder="First Name"
-      class="form-control placeholder-gray-500 placeholder-opacity-50 w-96 rounded-full my-4">
-      <br> 
-      <div *ngIf="loginForm.fname.errors">
-      <div *ngIf="loginForm.fname.errors.required">
-        
-            Name is required.
-      
+      ngModel 
+      #fname="ngModel"
+      (change)="log(fname)"
+      required
+      name="fname" type="text" id="fname" placeholder="First Name"
+      class="form-control placeholder-gray-500 placeholder-opacity-50 w-96 rounded-full my-4"
+      >
+      <div class="text-red" *ngIf="fname.touched && !fname.valid">
+        <div *ngIf="fname.errors?.required">
+          First Name is required.
+        </div>
       </div>
+      <br>
+       
+
+     <label for="lname" class="font-medium text-base">Last name</label><br>
+      <input 
+      ngModel 
+      #lname="ngModel"
+      (change)="log(lname)"
+      required
+      name="lname" type="text" id="lname" placeholder="Last Name" 
+      class="placeholder-gray-500 placeholder-opacity-50 w-96 rounded-full my-4"
+      >
+      <div class="text-red" *ngIf="lname.touched && !lname.valid">
+        <div *ngIf="lname.errors?.required">
+          Last Name is required.
+        </div>
       </div>
-     <label for="lname" class="font-medium text-base font-Poppins">Last name</label><br>
-      <input type="text" id="lname" name="lname" placeholder="Last Name" class="placeholder-gray-500 placeholder-opacity-50 w-96 rounded-full my-4"><br>
-     <label for="email" class="font-medium text-base font-Poppins">Email</label><br>
-      <input email type="text" id="email" name="email" placeholder="Email" class="placeholder-gray-500 placeholder-opacity-50 w-96 rounded-full my-4"><br>
-     <label for="password" class="font-medium text-base font-Poppins">Password</label><br>
-      <input type="password" id="password" name="password" placeholder="Password" class="placeholder-gray-500 placeholder-opacity-50 w-96 rounded-full my-4"><br>
-     <label for="cPassword" class="font-medium text-base font-Poppins">Confirm Password</label><br>
-      <input type="password" id="cpassword" name="cpassword" placeholder="Confirm Password" class="placeholder-gray-500 placeholder-opacity-50 w-96 rounded-full my-4"><br>
+      <br>
+
+
+     <label for="email" class="font-medium text-base">Email</label><br>
+      <input 
+      ngModel 
+      #email="ngModel"
+      (change)="log(email)"
+      required
+      email 
+      name="email" type="text" id="email"  placeholder="Email" 
+      class="placeholder-gray-500 placeholder-opacity-50 w-96 rounded-full my-4"
+      >
+      <div class="text-red" *ngIf="email.touched && !email.valid">
+        <div *ngIf="email.errors?.required">
+           Email is required.
+        </div>
+        <div *ngIf="email.errors?.email">
+          Email is invalid.
+       </div>
+      </div>
+      <br>
+
+
+     <label for="password" class="font-medium text-base">Password</label><br>
+      <input 
+      ngModel 
+      #password="ngModel"
+      (change)="log(password)"
+      required
+      name="password" type="password" id="password" placeholder="Password" 
+      class="placeholder-gray-500 placeholder-opacity-50 w-96 rounded-full my-4"
+      >
+      <div class="text-red" *ngIf="password.touched && !password.valid">
+        <div *ngIf="password.errors?.required">
+          Password is required.
+        </div>
+      </div>
+      <br>
+
+
+     <label for="cPassword" class="font-medium text-base">Confirm Password</label><br>
+      <input 
+      ngModel 
+      #cPassword="ngModel"
+      (change)="log(cPassword)"
+      required
+      name="cpassword" type="password" id="cpassword" placeholder="Confirm Password" 
+      class="placeholder-gray-500 placeholder-opacity-50 w-96 rounded-full my-4"
+      >
+      <div class="text-red" *ngIf="cPassword.touched && !cPassword.valid">
+        <div *ngIf="cPassword.errors?.required">
+          Please confirm your password. 
+        </div>
+      </div>
+      <br>
+
+
      <button 
+     (click)="preview($event);"
      type="submit"
-     [disabled]="!loginForm.valid"
-    class="w-24 my-4 text-white bg-black rounded-full py-3 px-6... font-medium text-base font-Poppins border-black"
+    class="w-24 my-4 text-white bg-cod-gray-500 rounded-full py-3 px-6... font-medium text-base font-poppins"
     >
         Sign Up
      </button>
   </form>
 </div>
-<div class="flex-1 box-content m-8 max-w-lg h-80 p-4 bg-black self-center ">
+<div class="flex-1 box-content m-8 max-w-lg h-80 p-4 p-4 bg-cod-gray-500 self-center ">
 
   <div class="m-8 text-white text-5xl font-Poppins">CONNECT VIA</div>
-
-  
 
 </div>
