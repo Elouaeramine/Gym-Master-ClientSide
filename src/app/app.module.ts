@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { ValidateEqualModule } from 'ng-validate-equal';
+import { HeaderComponent } from './shared/header/header.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { ValidateEqualModule } from 'ng-validate-equal';
     AppComponent,
     LoginComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
