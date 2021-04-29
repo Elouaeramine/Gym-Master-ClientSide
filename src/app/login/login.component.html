@@ -99,12 +99,16 @@
       #cPassword="ngModel"
       (change)="log(cPassword)"
       required
+      ngValidateEqual="password"
       name="cpassword" type="password" id="cpassword" placeholder="Confirm Password" 
       class="placeholder-gray-500 placeholder-opacity-50 w-96 rounded-full my-4"
       >
       <div class="text-red" *ngIf="cPassword.touched && !cPassword.valid">
         <div *ngIf="cPassword.errors?.required">
           Please confirm your password. 
+        </div>
+        <div class="warning-text" *ngIf="cPassword.hasError('notEqual')">
+          Passwords Don't Match
         </div>
       </div>
       <br>
