@@ -7,6 +7,9 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { ValidateEqualModule } from 'ng-validate-equal';
 import { HeaderComponent } from './shared/header/header.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSelectModule } from '@angular/material/select';
+import { FilterbarComponent } from './DiscGyms/filterbar/filterbar.component';
 
 
 @NgModule({
@@ -15,13 +18,16 @@ import { HeaderComponent } from './shared/header/header.component';
     LoginComponent,
     NavbarComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    FilterbarComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    ValidateEqualModule
+    ValidateEqualModule,
+    BrowserAnimationsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
