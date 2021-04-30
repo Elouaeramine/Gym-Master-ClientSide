@@ -10,6 +10,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 import { FilterbarComponent } from './DiscGyms/filterbar/filterbar.component';
+import { GymCardComponent } from './DiscGyms/gym-card/gym-card.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { FilterbarComponent } from './DiscGyms/filterbar/filterbar.component';
     NavbarComponent,
     FooterComponent,
     HeaderComponent,
-    FilterbarComponent
+    FilterbarComponent,
+    GymCardComponent
   ],
   imports: [
     BrowserModule,
