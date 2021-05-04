@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 import { FilterbarComponent } from './DiscGyms/filterbar/filterbar.component';
 import { GymCardComponent } from './DiscGyms/gym-card/gym-card.component';
+import { SearchBarComponent } from './DiscGyms/search-bar/search-bar.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { GymCardComponent } from './DiscGyms/gym-card/gym-card.component';
     FooterComponent,
     HeaderComponent,
     FilterbarComponent,
-    GymCardComponent
+    GymCardComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
