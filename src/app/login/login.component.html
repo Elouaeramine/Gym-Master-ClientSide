@@ -1,15 +1,18 @@
 <div class=" font-poppins flex flex-wrap justify-items-center">
 <div class="m-32 flex-1 self-center">
-  <form>
+  <form 
+  #loginForm="ngForm"
+  (ngSubmit)="register(loginForm)"
+  >
 
-     <label for="fname" class="font-medium text-base">First name</label><br>
+     <label for="fname" class="font-medium text-base">First name*</label><br>
       <input
       ngModel 
       #fname="ngModel"
       (change)="log(fname)"
       required
       name="fname" type="text" id="fname" placeholder="First Name"
-      class="form-control placeholder-gray-500 placeholder-opacity-50 w-96 rounded-full my-4"
+      class="form-control placeholder-gray-500 placeholder-opacity-50 w-96 rounded-full my-4 "
       >
       <div class="text-red" *ngIf="fname.touched && !fname.valid">
         <div *ngIf="fname.errors?.required">
@@ -19,7 +22,7 @@
       <br>
        
 
-     <label for="lname" class="font-medium text-base">Last name</label><br>
+     <label for="lname" class="font-medium text-base">Last name*</label><br>
       <input 
       ngModel 
       #lname="ngModel"
@@ -36,7 +39,7 @@
       <br>
 
 
-     <label for="email" class="font-medium text-base">Email</label><br>
+     <label for="email" class="font-medium text-base">Email*</label><br>
       <input 
       ngModel 
       #email="ngModel"
@@ -57,7 +60,7 @@
       <br>
 
 
-     <label for="password" class="font-medium text-base">Password</label><br>
+     <label for="password" class="font-medium text-base">Password*</label><br>
       <input 
       ngModel 
       #password="ngModel"
@@ -74,7 +77,7 @@
       <br>
 
 
-     <label for="cPassword" class="font-medium text-base">Confirm Password</label><br>
+     <label for="cPassword" class="font-medium text-base">Confirm Password*</label><br>
       <input 
       ngModel 
       #cPassword="ngModel"
@@ -84,7 +87,7 @@
       name="cpassword" type="password" id="cpassword" placeholder="Confirm Password" 
       class="placeholder-gray-500 placeholder-opacity-50 w-96 rounded-full my-4"
       >
-      <div class="text-red" *ngIf="cPassword.touched && !cPassword.valid">
+      <div class="text-red" *ngIf=" !cPassword.valid && cPassword.touched">
         <div *ngIf="cPassword.errors?.required">
           Please confirm your password. 
         </div>
@@ -93,17 +96,21 @@
         </div>
       </div>
       <br>
-
-
      <button 
-     (click)="preview($event);"
+     [disabled]="!loginForm.valid && fname.touched && lname.touched && email.touched && password.touched && cPassword.touched"
+     (click)= "loginForm.reset();"
      type="submit"
-    class="w-24 my-4 text-white bg-cod-gray-500 rounded-full py-3 px-6... font-medium text-base font-poppins"
-    >
-        Sign Up
+     class="w-24 my-4 text-white bg-cod-gray-500 rounded-full py-3 px-6... font-medium text-base font-poppins"
+     >
+      Sign Up 
      </button>
+
   </form>
 </div>
+
+
+  
+     
 
 <div class="flex-1 box-content m-16 max-w-lg h-80 p-4 p-4 bg-cod-gray-500 text-white self-center ">
   <div class="m-8 text-5xl font-Poppins">

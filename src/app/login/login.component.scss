@@ -1,3 +1,8 @@
-input.ng-invalid.ng-touched {
-    border-color: red ;
-  }
+// input.ng-invalid.ng-touched {
+//     border-color: red ;
+//   }
+
+.ng-invalid:not(form)  {
+  color:  #e91b17; /* red */
+}
+

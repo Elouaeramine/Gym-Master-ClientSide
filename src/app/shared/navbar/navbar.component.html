@@ -1,101 +1,41 @@
-
-<!-- <nav class="grid grid-cols-3 fixed flex items-center justify-between flex-wrap bg-white p-6 font-poppins w-full">
-    <div class="flex items-center flex-shrink-0 text-cod-gray-500 mr-6">
-        TODO: LOGO GYM MASTER
-      <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg>
-      <span class="font-semibold text-3xl tracking-tight">GYM MASTER</span>
-    </div>
-    <div class="block lg:hidden">
-      <button class="flex items-center  px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
-        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+<nav class="relative flex flex-wrap items-center justify-between px-2 py-3 bg-white mb-3 ">
+  <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
+    <div class="w-full relative flex justify-between lg:w-auto px-4 lg:static lg:block lg:justify-start">
+      <a class="font-semibold text-3xl font-bold text-cod-gray-500 font-poppins leading-relaxed inline-block mr-4 py-2 whitespace-nowrap" href="#">
+        GYM MASTER
+      </a>
+      <button class="text-cod-gray-500 cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none" type="button" (click)="toggleNavbar()">
+        <i class="fas fa-bars"></i>
       </button>
     </div>
-    <div class=" mx-8 col-end-7 col-span-1 space-x-8 flex w-full block flex-grow lg:flex lg:items-center lg:w-auto ">
-      <div class="space-x-8 text-sm lg:flex-grow">
-        <a href="#responsive-header" class="text-lg block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:underline mr-4">
-          Home
-        </a>
-        <a href="#responsive-header" class="text-lg block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:underline mr-4">
-          Discover Gyms
-        </a>
-        <a href="#responsive-header" class="text-lg block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:underline">
-          Blog
-        </a>
-      </div>
-      <div class="space-x-4">
-        <button class="w-24 text-black bg-white border-cod-gray-500 border-4 rounded-full py-3 px-6... font-medium text-base font-poppins">
+    <div [ngClass]="{'hidden': !showMenu, 'flex': showMenu}" class="lg:flex lg:flex-grow items-center">
+      <ul class="flex flex-col lg:flex-row list-none ml-auto">
+        <li class="nav-item">
+          <a class="px-3 py-2 flex items-center text-lg font-poppins leading-snug text-cod-gray-500 hover:underline" href="#">
+            <span class="ml-2 lg:my-2">Home</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="px-3 py-2 flex items-center text-lg font-poppins leading-snug text-cod-gray-500 hover:underline" href="#">
+            <span class="ml-2 lg:my-2">Discover Gyms</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="px-3 py-2 flex items-center text-lg font-poppins leading-snug text-cod-gray-500 hover:underline" href="#">
+            <span class="ml-2 lg:my-2">Blog</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <button class="w-24 text-black bg-white border-cod-gray-500 border-4 rounded-full py-3 md:my-2 lg:mx-4 lg:my-0 font-medium text-base font-poppins">
             Sign Up
          </button>
-        <button class="w-24 text-white bg-cod-gray-500 border-cod-gray-500 border-4 rounded-full py-3 px-6... font-medium text-base font-poppins">
+         </li>
+         <li class="nav-item">
+        <button class="w-24 text-white bg-cod-gray-500 border-cod-gray-500 border-4 rounded-full py-3 md:my-2 lg:mx-4 lg:my-0 font-medium text-base font-poppins">
            Login
-        </button>  
-      </div>
-    </div>
-  </nav>
-  -->
-
-
-  <div class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800">
-    <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
-      <div class="p-4 flex flex-row items-center justify-between">
-        <a href="#" class="text-3xl font-semibold font-poppins tracking-widest text-cod-gray-500 rounded-lg focus:outline-none focus:shadow-outline py-2">GYM MASTER</a>
-        <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline">
-          <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
-            <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-            <!-- <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path> -->
-          </svg>
         </button>
-      </div>
-      <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
-        <a class="px-4 py-4 mt-2 text-lg text-cod-gray-500 font-poppins rounded-lg  md:mt-0  md:ml-4 hover:underline" href="#">Home</a>
-        <a class="px-4 py-4 mt-2 text-lg text-cod-gray-500 font-poppins rounded-lg  md:mt-0  md:ml-4 hover:underline" href="#">Discover Gyms</a>
-        <a class="px-4 py-4 mt-2 text-lg text-cod-gray-500 font-poppins rounded-lg  md:mt-0  md:ml-4 hover:underline" href="#">Blog</a>
-        <div class="relative" x-data="{ open: false }">
-          <button class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
-            <button class="w-24 text-black bg-white border-cod-gray-500 border-4 rounded-full py-3 px-6... font-medium text-base font-poppins">
-              Sign Up
-           </button>
-          <button class="w-24 text-white bg-cod-gray-500 border-cod-gray-500 border-4 rounded-full py-3 px-6... font-medium text-base font-poppins">
-             Login
-          </button> 
-          </button>
-          
-        </div>    
-      </nav>
+        </li>
+      </ul>
     </div>
   </div>
-
-  <!-- <header class="lg:px-16 px-6 bg-white flex flex-wrap items-center lg:py-0 py-2">
-    <div class="flex-1 flex justify-between items-center">
-      <svg class="h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg>
-      <span class="font-semibold text-3xl tracking-tight text-cod-gray-500 font-poppins">GYM MASTER</span>
-    </div>
-
-    <label for="menu-toggle" class="lg:hidden block"> 
-      <svg class="h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-    </label>
-    
-    <div class="hidden lg:flex lg:items-center lg:w-auto w-full">
-      <nav>
-        <ul>
-          <li>
-            <a href="#" class="lg:p-4 py-3 px-0 block border-b-2 hover:underline">Home</a>
-          </li>
-          <li>
-            <a href="#" class="lg:p-4 py-3 px-0 block border-b-2 hover:underline">Discover Gyms</a>
-          </li>
-          <li>
-            <a href="#" class="lg:p-4 py-3 px-0 block border-b-2 hover:underline">Blog</a>
-          </li>
-        </ul>
-      </nav>
-      <a href="#" class="lg:ml-4 flex items-center justify-start lg:mb-0 mb-4" >
-        <button class="w-24 text-black bg-white border-cod-gray-500 border-4 rounded-full py-3 px-6... font-medium text-base font-poppins">
-          Sign Up
-       </button>
-      <button class="w-24 text-white bg-cod-gray-500 border-cod-gray-500 border-4 rounded-full py-3 px-6... font-medium text-base font-poppins">
-         Login
-      </button> 
-      </a>
-</div>
-</header> -->
+</nav>
