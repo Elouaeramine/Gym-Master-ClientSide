@@ -6,13 +6,14 @@ import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { ValidateEqualModule } from 'ng-validate-equal';
-import { HeaderComponent } from './shared/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 import { FilterbarComponent } from './DiscGyms/filterbar/filterbar.component';
 import { GymCardComponent } from './DiscGyms/gym-card/gym-card.component';
 import { SearchBarComponent } from './DiscGyms/search-bar/search-bar.component';
-
+// import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { LoginHeaderComponent } from './shared/header/login-header/login-header.component';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -20,10 +21,13 @@ import { SearchBarComponent } from './DiscGyms/search-bar/search-bar.component';
     LoginComponent,
     NavbarComponent,
     FooterComponent,
-    HeaderComponent,
     FilterbarComponent,
     GymCardComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    LoginHeaderComponent,
+    // LoginPageComponent,
+    routingComponents
+    
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,8 @@ import { SearchBarComponent } from './DiscGyms/search-bar/search-bar.component';
     ReactiveFormsModule,
     ValidateEqualModule,
     BrowserAnimationsModule,
-    MatSelectModule
+    MatSelectModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

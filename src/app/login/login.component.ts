@@ -8,21 +8,13 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent{
-
-
-  
 log(x: any) { console.log(x); }
-
-
 
 register (loginForm: NgForm){
   if (loginForm.valid) {
     console.log("Form Submitted!");
     loginForm.reset();
   }
-
-  // console.log('Successful registration');
-  // console.log(loginForm);
 }
 
 }
