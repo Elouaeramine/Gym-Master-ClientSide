@@ -9,21 +9,20 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginComponent{
 
+
   
 log(x: any) { console.log(x); }
-submitted = false;
 
-onSubmit() { this.submitted = true; }
 
 
 register (loginForm: NgForm){
-  console.log('Successful registration');
-  console.log(loginForm);
-}
+  if (loginForm.valid) {
+    console.log("Form Submitted!");
+    loginForm.reset();
+  }
 
-// preview(e: { preventDefault: () => void; }) {
-//   e.preventDefault();
-//   console.log('preview')
-// }
+  // console.log('Successful registration');
+  // console.log(loginForm);
+}
 
 }
