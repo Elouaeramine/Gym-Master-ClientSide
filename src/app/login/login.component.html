@@ -97,6 +97,7 @@
       </div>
       <br>
      <button 
+     (click)="addUser(loginForm); getUsers();"
      [ngStyle]="{'cursor': loginForm.invalid ? 'no-drop' : 'pointer' }"
      type="submit"
      class="w-24 my-4 text-white bg-cod-gray-500 rounded-full py-3 px-6... font-medium text-base font-poppins"
