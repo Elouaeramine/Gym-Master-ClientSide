@@ -1,0 +1,118 @@
+<div class="sm:m-16 md:m-20 lg:m-32 font-poppins flex flex-wrap justify-items-center">
+<div class=" self-center">
+  <form 
+  #loginForm="ngForm"
+  (ngSubmit)="register(loginForm)"
+  >
+
+     <label for="fname" class="font-medium text-base">First name*</label><br>
+      <input
+      ngModel 
+      #fname="ngModel"
+      (change)="log(fname)"
+      required
+      name="fname" type="text" id="fname" placeholder="First Name"
+      class="form-control placeholder-gray-500 placeholder-opacity-50 w-96 rounded-full my-4 "
+      >
+      <div class="text-red" *ngIf="fname.touched && !fname.valid">
+        <div *ngIf="fname.errors?.required">
+          First Name is required.
+        </div>
+      </div>
+      <br>
+       
+
+     <label for="lname" class="font-medium text-base">Last name*</label><br>
+      <input 
+      ngModel 
+      #lname="ngModel"
+      (change)="log(lname)"
+      required
+      name="lname" type="text" id="lname" placeholder="Last Name" 
+      class="placeholder-gray-500 placeholder-opacity-50 w-96 rounded-full my-4"
+      >
+      <div class="text-red" *ngIf="lname.touched && !lname.valid">
+        <div *ngIf="lname.errors?.required">
+          Last Name is required.
+        </div>
+      </div>
+      <br>
+
+
+     <label for="email" class="font-medium text-base">Email*</label><br>
+      <input 
+      ngModel 
+      #email="ngModel"
+      (change)="log(email)"
+      required
+      email 
+      name="email" type="text" id="email"  placeholder="Email" 
+      class="placeholder-gray-500 placeholder-opacity-50 w-96 rounded-full my-4"
+      >
+      <div class="text-red" *ngIf="email.touched && !email.valid">
+        <div *ngIf="email.errors?.required">
+           Email is required.
+        </div>
+        <div *ngIf="email.errors?.email">
+          Email is invalid.
+       </div>
+      </div>
+      <br>
+
+
+     <label for="password" class="font-medium text-base">Password*</label><br>
+      <input 
+      ngModel 
+      #password="ngModel"
+      (change)="log(password)"
+      required
+      name="password" type="password" id="password" placeholder="Password" 
+      class="placeholder-gray-500 placeholder-opacity-50 w-96 rounded-full my-4"
+      >
+      <div class="text-red" *ngIf="password.touched && !password.valid">
+        <div *ngIf="password.errors?.required">
+          Password is required.
+        </div>
+      </div>
+      <br>
+
+
+     <label for="cPassword" class="font-medium text-base">Confirm Password*</label><br>
+      <input 
+      ngModel 
+      #cPassword="ngModel"
+      (change)="log(cPassword)"
+      required
+      ngValidateEqual="password"
+      name="cpassword" type="password" id="cpassword" placeholder="Confirm Password" 
+      class="placeholder-gray-500 placeholder-opacity-50 w-96 rounded-full my-4"
+      >
+      <div class="text-red" *ngIf=" !cPassword.valid && cPassword.touched">
+        <div *ngIf="cPassword.errors?.required">
+          Please confirm your password. 
+        </div>
+        <div class="warning-text" *ngIf="cPassword.hasError('notEqual')">
+          Passwords Don't Match
+        </div>
+      </div>
+      <br>
+     <button 
+     (click)="addUser(loginForm); getUsers();"
+     [ngStyle]="{'cursor': loginForm.invalid ? 'no-drop' : 'pointer' }"
+     type="submit"
+     class="w-24 my-4 text-white bg-cod-gray-500 rounded-full py-3 px-6... font-medium text-base font-poppins"
+     >
+      Sign Up 
+     </button>
+
+  </form>
+</div>
+
+<div class="md:flex-auto sm:m-0 box-content lg:m-32  max-w-lg h-80 p-4 p-4 bg-cod-gray-500 text-white self-center ">
+  <div class="m-8 text-5xl font-Poppins">
+    CONNECT VIA
+  </div>
+  <div>
+   <!-- TODO: icons -->
+  </div>
+</div>
