@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Gym } from 'src/Model/Gym';
 
 @Component({
   selector: 'app-gym-card',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gym-card.component.scss']
 })
 export class GymCardComponent implements OnInit {
-
+  @Input()
+  data!: Gym;
+  
   constructor() { }
 
   ngOnInit(): void {
