@@ -18,6 +18,8 @@ import { DicoverGymsHeaderComponent } from './shared/header/dicover-gyms-header/
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { GymCardComponent } from './DiscGyms/gym-card/gym-card.component';
 import { GymCardsListComponent } from './DiscGyms/gym-cards-list/gym-cards-list.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
+import { UsersInterceptorService } from './services/users.interceptor.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,7 @@ import { GymCardsListComponent } from './DiscGyms/gym-cards-list/gym-cards-list.
     DicoverGymsHeaderComponent,
     HomePageComponent,
     GymCardsListComponent
-    
+
   ],
   imports: [
     BrowserModule,
@@ -44,9 +46,14 @@ import { GymCardsListComponent } from './DiscGyms/gym-cards-list/gym-cards-list.
     ValidateEqualModule,
     BrowserAnimationsModule,
     MatSelectModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide : HTTP_INTERCEPTORS,
+    useClass : UsersInterceptorService,
+    multi : true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

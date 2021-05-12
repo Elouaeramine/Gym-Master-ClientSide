@@ -1,38 +1,38 @@
 <div class="sm:m-16 md:m-20 lg:m-32 font-poppins flex flex-wrap justify-items-center">
 <div class=" self-center">
-  <form 
+  <form
   #loginForm="ngForm"
   (ngSubmit)="register(loginForm)"
   >
 
-     <label for="fname" class="font-medium text-base">First name*</label><br>
+     <label for="first_name" class="font-medium text-base">First name*</label><br>
       <input
-      ngModel 
-      #fname="ngModel"
-      (change)="log(fname)"
+      ngModel
+      #first_name="ngModel"
+      (change)="log(first_name)"
       required
-      name="fname" type="text" id="fname" placeholder="First Name"
+      name="first_name" type="text" id="first_name" placeholder="First Name"
       class="form-control placeholder-gray-500 placeholder-opacity-50 w-96 rounded-full my-4 "
       >
-      <div class="text-red" *ngIf="fname.touched && !fname.valid">
-        <div *ngIf="fname.errors?.required">
+      <div class="text-red" *ngIf="first_name.touched && !first_name.valid">
+        <div *ngIf="first_name.errors?.required">
           First Name is required.
         </div>
       </div>
       <br>
-       
 
-     <label for="lname" class="font-medium text-base">Last name*</label><br>
-      <input 
-      ngModel 
-      #lname="ngModel"
-      (change)="log(lname)"
+
+     <label for="last_name" class="font-medium text-base">Last name*</label><br>
+      <input
+      ngModel
+      #last_name="ngModel"
+      (change)="log(last_name)"
       required
-      name="lname" type="text" id="lname" placeholder="Last Name" 
+      name="last_name" type="text" id="last_name" placeholder="Last Name"
       class="placeholder-gray-500 placeholder-opacity-50 w-96 rounded-full my-4"
       >
-      <div class="text-red" *ngIf="lname.touched && !lname.valid">
-        <div *ngIf="lname.errors?.required">
+      <div class="text-red" *ngIf="last_name.touched && !last_name.valid">
+        <div *ngIf="last_name.errors?.required">
           Last Name is required.
         </div>
       </div>
@@ -40,13 +40,13 @@
 
 
      <label for="email" class="font-medium text-base">Email*</label><br>
-      <input 
-      ngModel 
+      <input
+      ngModel
       #email="ngModel"
       (change)="log(email)"
       required
-      email 
-      name="email" type="text" id="email"  placeholder="Email" 
+      email
+      name="email" type="text" id="email"  placeholder="Email"
       class="placeholder-gray-500 placeholder-opacity-50 w-96 rounded-full my-4"
       >
       <div class="text-red" *ngIf="email.touched && !email.valid">
@@ -61,12 +61,12 @@
 
 
      <label for="password" class="font-medium text-base">Password*</label><br>
-      <input 
-      ngModel 
+      <input
+      ngModel
       #password="ngModel"
       (change)="log(password)"
       required
-      name="password" type="password" id="password" placeholder="Password" 
+      name="password" type="password" id="password" placeholder="Password"
       class="placeholder-gray-500 placeholder-opacity-50 w-96 rounded-full my-4"
       >
       <div class="text-red" *ngIf="password.touched && !password.valid">
@@ -77,32 +77,32 @@
       <br>
 
 
-     <label for="cPassword" class="font-medium text-base">Confirm Password*</label><br>
-      <input 
-      ngModel 
-      #cPassword="ngModel"
-      (change)="log(cPassword)"
+     <label for="password_confirm" class="font-medium text-base">Confirm Password*</label><br>
+      <input
+      ngModel
+      #password_confirm="ngModel"
+      (change)="log(password_confirm)"
       required
       ngValidateEqual="password"
-      name="cpassword" type="password" id="cpassword" placeholder="Confirm Password" 
+      name="password_confirm" type="password" id="password_confirm" placeholder="Confirm Password"
       class="placeholder-gray-500 placeholder-opacity-50 w-96 rounded-full my-4"
       >
-      <div class="text-red" *ngIf=" !cPassword.valid && cPassword.touched">
-        <div *ngIf="cPassword.errors?.required">
-          Please confirm your password. 
+      <div class="text-red" *ngIf=" !password_confirm.valid && password_confirm.touched">
+        <div *ngIf="password_confirm.errors?.required">
+          Please confirm your password.
         </div>
-        <div class="warning-text" *ngIf="cPassword.hasError('notEqual')">
+        <div class="warning-text" *ngIf="password_confirm.hasError('notEqual')">
           Passwords Don't Match
         </div>
       </div>
       <br>
-     <button 
-     (click)="addUser(loginForm); getUsers();"
+     <button
+     (click)="register(loginForm)"
      [ngStyle]="{'cursor': loginForm.invalid ? 'no-drop' : 'pointer' }"
      type="submit"
      class="w-24 my-4 text-white bg-cod-gray-500 rounded-full py-3 px-6... font-medium text-base font-poppins"
      >
-      Sign Up 
+      Sign Up
      </button>
 
   </form>
