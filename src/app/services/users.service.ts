@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders,HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
+import { Observable, throwError, of } from 'rxjs';
 import {tap, map , catchError} from 'rxjs/operators';
 import { User } from '../../Model/User';
 @Injectable({
@@ -23,11 +23,15 @@ export class UsersService {
     return throwError(error);
   }
 
+  // TODO:
+  // This function will return the JWT token from the query params
+  // Should access the current authenticated user
+  // should return a jwt : string
   getToken() {}
 
 
-  login(credentials: any) {
-    return this.http.post(`${this.baseUrl}/login`, credentials);
+  login(email : string , password  : string ) {
+    return this.http.post(`${this.baseUrl}/login`, {email , password});
   }
 
   register(credentials : User){
@@ -35,6 +39,11 @@ export class UsersService {
     return this.http.post(`${this.baseUrl}/register`, credentials).subscribe(data=>{
       console.log(data);
     });
+  }
+
+  // The signOut mehtod returns a null observable
+  signOut(): Observable<null> {
+    return of(null);
   }
 
   addUser(u: User): void {
