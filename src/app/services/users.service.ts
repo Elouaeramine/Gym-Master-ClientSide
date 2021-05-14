@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse, HttpHeaders,HttpParams } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError, of } from 'rxjs';
 import {tap, map , catchError} from 'rxjs/operators';
@@ -13,12 +13,12 @@ export class UsersService {
   baseUrl = 'http://localhost:8000/api';
 
 
-  getUsers() : Observable<User[]> {
+  getUsers(): Observable<User[]> {
 
     return this.http.get<User []>(`${this.baseUrl}/user`);
   }
 
-  handleError(error : HttpErrorResponse){
+  handleError(error: HttpErrorResponse){
     console.log(error);
     return throwError(error);
   }
@@ -30,13 +30,13 @@ export class UsersService {
   getToken() {}
 
 
-  login(email : string , password  : string ) {
+  login(email: string , password: string ) {
     return this.http.post(`${this.baseUrl}/login`, {email , password});
   }
 
-  register(credentials : User){
+  register(credentials: User){
     console.log('reached Register method');
-    return this.http.post(`${this.baseUrl}/register`, credentials).subscribe(data=>{
+    return this.http.post(`${this.baseUrl}/register`, credentials).subscribe(data => {
       console.log(data);
     });
   }

@@ -10,5 +10,5 @@ export class NavbarComponent {
   toggleNavbar(){
     this.showMenu = !this.showMenu;
   }
- 
+
 }

@@ -13,7 +13,7 @@ import { Login, SignOut } from '../auth/auth.state.model';
 export class LoginComponent implements OnInit{
 constructor(
    private usersService: UsersService,
-   private _store : Store
+   private _store: Store
     ) {}
   users: User[] = [];
   ngOnInit(): void {
@@ -21,9 +21,9 @@ constructor(
   }
 log(x: any) { console.log(x); }
 
-register (loginForm: NgForm){
+register(loginForm: NgForm){
   if (loginForm.valid) {
-    console.log("Form Submitted!");
+    console.log('Form Submitted!');
     this.usersService.register(loginForm.value);
     loginForm.reset();
   }
@@ -39,12 +39,12 @@ addUser(loginForm: NgForm){
 // this should be in the login.ts file
 // There have been a mistake ( login component is actually Signup component)
 
-login(loginForm : NgForm){
-  if(loginForm.valid){
+login(loginForm: NgForm){
+  if (loginForm.valid){
     console.log('Login Form submiittted ');
     this._store
-    .dispatch(new Login(loginForm.value.email ,loginForm.value.password))
-    .subscribe(success  => {} , error =>{});
+    .dispatch(new Login(loginForm.value.email , loginForm.value.password))
+    .subscribe(success  => {} , error => {});
   }
 }
 
@@ -56,10 +56,10 @@ logout() {
 
 getUsers() {
   this.usersService.getUsers().subscribe(
-    (users)=>{
+    (users) => {
       console.log(users);
     },
-    (error)=>{
+    (error) => {
       console.error('Probleme d\'access');
     }
   );

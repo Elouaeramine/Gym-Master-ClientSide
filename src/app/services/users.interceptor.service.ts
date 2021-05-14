@@ -8,15 +8,15 @@ import { UsersService } from './users.service';
 })
 export class UsersInterceptorService implements HttpInterceptor {
 
-  constructor(private userService : UsersService) { }
+  constructor(private userService: UsersService) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>>{
     const headers = new HttpHeaders({
-      'Authorization' : `Bearer ${this.userService.getToken()}`
-    })
+      Authorization : `Bearer ${this.userService.getToken()}`
+    });
 
     const clone = req.clone({
-      headers : headers
+      headers
     });
 
     return next.handle(clone);

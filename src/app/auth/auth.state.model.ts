@@ -1,17 +1,18 @@
 import { UsersService } from './../services/users.service';
-import { Action, Selector, State, StateContext } from "@ngxs/store";
+import { Action, Selector, State, StateContext } from '@ngxs/store';
 import { tap } from 'rxjs/operators';
+import { Injectable } from '@angular/core';
 
 
-export class AuthStateModel {
-  token?: string;
-  email?: string;
-  name?: string ;
+export interface AuthStateModel {
+  token: string | null ;
+  email: string | null;
+  name: string  | null;
 }
 
 export class Login {
   static readonly type = '[Auth] Login';
-  constructor(public email : string , public password :string ){}
+  constructor(public email: string , public password: string ){}
 }
 
 export class SignOut {
@@ -19,12 +20,24 @@ export class SignOut {
 }
 
 @State<AuthStateModel>({
-  name : 'Auth'
+  name : 'Auth',
+  defaults : {
+    token : null ,
+    name : null ,
+    email : null
+  }
 })
+
+@Injectable()
 export class AuthState {
   @Selector()
-  static token(state : AuthStateModel){
+  static token(state: AuthStateModel): string | null {
     return state.token;
+  }
+
+  @Selector()
+  static  isAuthenticated(state: AuthStateModel): boolean {
+    return !!state.token;
   }
 
   @Selector()
@@ -32,34 +45,38 @@ export class AuthState {
     return {
       name: state.name,
       email : state.email
-    }
+    };
   }
 
-  constructor(private userService : UsersService){}
+  constructor(private userService: UsersService){}
 
   @Action(Login)
   login(
-    {patchState} : StateContext<AuthStateModel>,
-    {email , password } : Login
+    {patchState}: StateContext<AuthStateModel>,
+    {email , password }: Login
   ){
     return this.userService.login(email , password).pipe(
-      tap(result =>{
+      tap(result => {
         patchState({
           token: result.token,
-          name :result.name ,
+          name : result.name ,
           email : result.email
-        })
+        });
       })
-    )
+    );
   }
 
   @Action(SignOut)
-  logout({setState , getState} : StateContext<AuthStateModel>){
+  logout({setState , getState}: StateContext<AuthStateModel>){
     const {token} = getState();
     return this.userService.signOut().pipe(
       tap(_ => {
-        setState({});
+        setState({
+          token : null,
+          email: null ,
+          name : null
+        });
       })
-    )
+    );
   }
 }
