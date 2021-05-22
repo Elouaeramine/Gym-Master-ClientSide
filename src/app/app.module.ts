@@ -18,6 +18,10 @@ import { DicoverGymsHeaderComponent } from './shared/header/dicover-gyms-header/
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { GymCardComponent } from './DiscGyms/gym-card/gym-card.component';
 import { GymCardsListComponent } from './DiscGyms/gym-cards-list/gym-cards-list.component';
+import { BlogPageComponent } from './pages/blog-page/blog-page.component';
+import { BlogCardComponent } from './blog/blog-card/blog-card.component';
+import { BlogCardsListComponent } from './blog/blog-cards-list/blog-cards-list.component';
+import { BlogHeaderComponent } from './shared/header/blog-header/blog-header.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,12 @@ import { GymCardsListComponent } from './DiscGyms/gym-cards-list/gym-cards-list.
     DiscoverGymsPageComponent,
     DicoverGymsHeaderComponent,
     HomePageComponent,
-    GymCardsListComponent
+    GymCardsListComponent,
+
+    BlogPageComponent,
+      BlogCardComponent,
+      BlogCardsListComponent,
+      BlogHeaderComponent
     
   ],
   imports: [
