@@ -1,63 +1,42 @@
-<!-- <div class="container self-center  mx-auto border-4 border-cod-gray-500 rounded-t-full rounded-bl-full w-3/6  h-20">
-    <div class="grid grid-cols-6" >
-    <div class="col-span-3 self-center space-y-2.5">
-        <input class="col-span-3 rounded-full  border-cod-gray-500 border-opacity-0" type="text" placeholder="Search.." name="search">
-    
-    </div>
-      <input class="col-span-2  self-center space-y-2.5 rounded-full border-cod-gray-500  border-opacity-0" type="text" placeholder="Search.." name="search">
-    
-      <button 
-        type="submit"
-        class="col-span-1 self-right w-32 h-16 text-white bg-cod-gray-500  rounded-t-full rounded-bl-full font-medium text-base font-poppins"
-        >
-            Search
-      </button>
-    </div>
-    </div>
-    <br> <br> -->
-
-<div class="self-center my-24  mx-auto border-4 border-cod-gray-500 rounded-t-full rounded-bl-full w-3/5  ">
-    <!-- <div class="container"> -->
+<div class="container relative flex flex-wrap mx-auto overflow-hidden self-center
+my-24 mx-auto border-4 border-cod-gray-500
+sm:w-2/3 md:w-2/3 lg:w-3/5    
+sm:rounded-2xl md:rounded-2xl lg:rounded-t-full lg:rounded-bl-full">
     <form>
         <div class="row">
-            <div class="col-lg-12">
-                <div class="grid grid-cols-6">
-                    <!-- <div class="col-lg-4 col-md-4 col-sm-12"> -->
-                    <div class="ml-8 py-4 col-span-2 ">
-                        <li class="text-sm font-poppins">Name</li>
-                        <input class=" appearance-none bg-transparent border-none w-full text-gray-700  py-1 px-2 leading-tight focus:outline-none
-                                " type="text" placeholder="Name">
-                    </div>
-                    <!-- </div> -->
-                    <!-- <div class="col-lg-3 col-md-3 col-sm-12">
-                                <input type="text" class="" placeholder="Enter Drop City">
-                            </div> -->
-                    <!-- <div class="col-lg-4 col-md-4 col-sm-12"> -->
-                    <div class="ml-32 py-4 col-span-2 ">
-                        <li class="text-sm font-poppins" >Location</li>
-                        <select class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none
-                                 " id="">
-                            <option>Choose location</option>
-                            <option>Example one</option>
-                            <option>Example one</option>
-                            <option>Example one</option>
-                            <option>Example one</option>
-                            <option>Example one</option>
-                            <option>Example one</option>
-                        </select>
-                    </div>
-
-
-                    <!-- </div> -->
-                    <!-- <div class="col-lg-4 col-md-4 col-sm-12"> -->
-                    <button type="button"
-                        class="mx-28 w-48 h-20 col-span-2
-                                self-right  text-white bg-cod-gray-500  rounded-t-full rounded-bl-full font-medium text-base font-poppins">Search</button>
-
-                    <!-- </div> -->
+            <div class="grid grid-cols-6">
+                <div class="py-4
+                    lg:ml-8 md:ml-32 sm:ml-8 
+                    lg:col-span-2 md:col-span-6 sm:col-span-6 ">
+                    <li class="text-sm font-poppins">Name</li>
+                    <input
+                        class="appearance-none bg-transparent border-none w-full text-gray-700  py-1 px-2 leading-tight focus:outline-none"
+                        type="text" placeholder="Name">
                 </div>
+                <div class="py-4 
+                    lg:ml-32 md:ml-32 sm:ml-8 
+                     lg:col-span-2 md:col-span-6 sm:col-span-6">
+                    <li class="text-sm font-poppins">Location</li>
+                    <select
+                        class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+                        id="">
+                        <option hidden>Choose location</option>
+                        <option>Example one</option>
+                        <option>Example one</option>
+                        <option>Example one</option>
+                        <option>Example one</option>
+                        <option>Example one</option>
+                        <option>Example one</option>
+                    </select>
+                </div>
+                <button type="button" class="self-right text-white bg-cod-gray-500 font-medium text-base font-poppins
+                        lg:mx-28 lg:w-48 lg:h-20 lg:col-span-2 lg:rounded-t-full lg:rounded-bl-full
+                        md:mx-24 md:col-span-6 md:w-full
+                        sm:mx-24 sm:rounded-t-2xl sm:col-span-6 sm:w-full">
+                    Search
+                </button>
             </div>
+
         </div>
     </form>
-    <!-- </div> -->
 </div>

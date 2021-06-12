@@ -18,11 +18,16 @@ import { DicoverGymsHeaderComponent } from './shared/header/dicover-gyms-header/
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { GymCardComponent } from './DiscGyms/gym-card/gym-card.component';
 import { GymCardsListComponent } from './DiscGyms/gym-cards-list/gym-cards-list.component';
+
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UsersInterceptorService } from './services/users.interceptor.service';
 import { NgxsModule } from '@ngxs/store';
 import { AuthState } from './auth/auth.state.model';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
+
+import { Login2Component } from './login2/login2.component';
+import { Login2PageComponent } from './pages/login2-page/login2-page.component';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +44,10 @@ import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
     DiscoverGymsPageComponent,
     DicoverGymsHeaderComponent,
     HomePageComponent,
-    GymCardsListComponent
+
+    GymCardsListComponent,
+    Login2Component,
+    Login2PageComponent
 
   ],
   imports: [
