@@ -12,7 +12,7 @@ export interface AuthStateModel {
 
 export class Login {
   static readonly type = '[Auth] Login';
-  constructor(public email: string , public password: string ){}
+  constructor(public payload: { email: string; password: string}){}
 }
 
 export class SignOut {
@@ -51,16 +51,17 @@ export class AuthState {
   constructor(private userService: UsersService){}
 
   @Action(Login)
-  login(
-    {patchState}: StateContext<AuthStateModel>,
-    {email , password }: Login
+    login(
+    ctx: StateContext<AuthStateModel>,
+    action: Login
   ){
-    return this.userService.login(email , password).pipe(
-      tap(result => {
-        patchState({
-          token: result.token,
-          name : result.name ,
-          email : result.email
+    return this.userService.login(action.payload.email , action.payload.password).pipe(
+      tap( (result) => {
+        ctx.patchState({
+          // TODO: Fix this Error
+          // token: result.token,
+          // name : action.payload.  ,
+          email : action.payload.email
         });
       })
     );

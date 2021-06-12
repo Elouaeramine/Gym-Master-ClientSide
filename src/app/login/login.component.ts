@@ -13,6 +13,7 @@ import { Login, SignOut } from '../auth/auth.state.model';
 export class LoginComponent implements OnInit{
 constructor(
    private usersService: UsersService,
+   // tslint:disable-next-line: variable-name
    private _store: Store
     ) {}
   users: User[] = [];
@@ -43,7 +44,7 @@ login(loginForm: NgForm){
   if (loginForm.valid){
     console.log('Login Form submiittted ');
     this._store
-    .dispatch(new Login(loginForm.value.email , loginForm.value.password))
+    .dispatch(new Login({ email : loginForm.value.email , password : loginForm.value.password}))
     .subscribe(success  => {} , error => {});
   }
 }
