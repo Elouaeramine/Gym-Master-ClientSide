@@ -22,6 +22,8 @@ import { BlogPageComponent } from './pages/blog-page/blog-page.component';
 import { BlogCardComponent } from './blog/blog-card/blog-card.component';
 import { BlogCardsListComponent } from './blog/blog-cards-list/blog-cards-list.component';
 import { BlogHeaderComponent } from './shared/header/blog-header/blog-header.component';
+import { GymCarouselComponent } from './gym/gym-carousel/gym-carousel.component';
+import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { BlogHeaderComponent } from './shared/header/blog-header/blog-header.com
     BlogPageComponent,
       BlogCardComponent,
       BlogCardsListComponent,
-      BlogHeaderComponent
+      BlogHeaderComponent,
+      GymCarouselComponent
     
   ],
   imports: [
@@ -53,7 +56,8 @@ import { BlogHeaderComponent } from './shared/header/blog-header/blog-header.com
     ValidateEqualModule,
     BrowserAnimationsModule,
     MatSelectModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxUsefulSwiperModule
   ],
   providers: [],
   bootstrap: [AppComponent]
