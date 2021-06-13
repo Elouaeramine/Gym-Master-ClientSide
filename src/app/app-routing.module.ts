@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { GymCarouselComponent } from './gym/gym-carousel/gym-carousel.component';
+import { GymPageComponent } from './pages/gym-page/gym-page/gym-page.component';
 import { BlogPageComponent } from './pages/blog-page/blog-page.component';
 import { DiscoverGymsPageComponent } from './pages/discover-gyms-page/discover-gyms-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
@@ -13,7 +13,7 @@ const routes: Routes = [
     {path: 'blog', component: BlogPageComponent},
     // this should be in funtiion of sicover gyms : 
     // ex: we have 4 gyms we'll have 4 routes for each individual gym
-    {path: 'gym', component: GymCarouselComponent}
+    {path: 'gym', component: GymPageComponent}
 
 ];
 

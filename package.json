@@ -27,6 +27,7 @@
     "@ng-bootstrap/ng-bootstrap": "^9.1.2",
     "bootstrap": "^4.5.0",
     "font-awesome": "^4.7.0",
+    "mapbox-gl": "^2.3.0",
     "ng-validate-equal": "^1.0.4",
     "ngx-useful-swiper": "^10.0.1",
     "rxjs": "~6.6.0",
