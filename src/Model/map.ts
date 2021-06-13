@@ -14,10 +14,10 @@ export class GeoJson implements IGeoJson {
   type = 'Feature';
   geometry: IGeometry;
 
-  constructor(coordinates, public properties?) {
+  constructor(coordinates: any, public properties?: any) {
     this.geometry = {
       type: 'Point',
-      coordinates: coordinates
+      coordinates
     }
   }
 }

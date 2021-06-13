@@ -25,9 +25,8 @@ import { BlogHeaderComponent } from './shared/header/blog-header/blog-header.com
 import { GymCarouselComponent } from './gym/gym-carousel/gym-carousel.component';
 import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 import { GymPageComponent } from './pages/gym-page/gym-page/gym-page.component';
-import { GymMapComponent } from './gym/gym-map/gym-map.component';
-import { MapComponent } from './gym/map/map.component';
 import { MapBoxComponent } from './gym/map-box/map-box.component';
+import { MapService } from './services/map.service';
 
 @NgModule({
   declarations: [
@@ -52,10 +51,8 @@ import { MapBoxComponent } from './gym/map-box/map-box.component';
       BlogHeaderComponent,
       GymCarouselComponent,
       GymPageComponent,
-      GymMapComponent,
-      MapComponent,
       MapBoxComponent
-    
+
   ],
   imports: [
     BrowserModule,
@@ -67,7 +64,7 @@ import { MapBoxComponent } from './gym/map-box/map-box.component';
     AppRoutingModule,
     NgxUsefulSwiperModule
   ],
-  providers: [],
+  providers: [MapService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

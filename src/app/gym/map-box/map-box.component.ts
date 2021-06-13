@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import * as mapboxgl from 'mapbox-gl';
-import { MapService } from '../map.service';
-import { GeoJson, FeatureCollection } from '../map';
+import { MapService } from '../../services/map.service';
+import { GeoJson, FeatureCollection } from '../../../Model/map';
 
 
 @Component({
-  selector: 'map-box',
+  selector: 'app-map-box',
   templateUrl: './map-box.component.html',
   styleUrls: ['./map-box.component.scss']
 })
 export class MapBoxComponent implements OnInit{
 
   /// default settings
-  map: mapboxgl.Map;
+  map: mapboxgl.Map | any;
   style = 'mapbox://styles/mapbox/outdoors-v9';
   lat = 37.75;
   lng = -122.41;
@@ -26,8 +26,10 @@ export class MapBoxComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.markers = this.mapService.getMarkers()
+    // this.markers = this.mapService.getMarkers()
     this.initializeMap()
+    console.log('init map');
+
   }
 
   private initializeMap() {
@@ -60,15 +62,15 @@ export class MapBoxComponent implements OnInit{
 
 
     //// Add Marker on Click
-    this.map.on('click', (event) => {
+    this.map.on('click', (event: { lngLat: { lng: any; lat: any; }; }) => {
       const coordinates = [event.lngLat.lng, event.lngLat.lat]
       const newMarker   = new GeoJson(coordinates, { message: this.message })
-      this.mapService.createMarker(newMarker)
+      // this.mapService.createMarker(newMarker)
     })
 
 
     /// Add realtime firebase data on map load
-    this.map.on('load', (event) => {
+    this.map.on('load', (_event: any) => {
 
       /// register source
       this.map.addSource('firebase', {
@@ -80,13 +82,14 @@ export class MapBoxComponent implements OnInit{
       });
 
       /// get source
-      this.source = this.map.getSource('firebase')
+      // this.source = this.map.getSource('firebase')
 
       /// subscribe to realtime database and set data source
-      this.markers.subscribe(markers => {
-          let data = new FeatureCollection(markers)
-          this.source.setData(data)
-      })
+
+      // this.markers.subscribe((markers: GeoJson[]) => {
+      //     let data = new FeatureCollection(markers)
+      //     this.source.setData(data)
+      // })
 
       /// create map layers with realtime data
       this.map.addLayer({
@@ -114,9 +117,9 @@ export class MapBoxComponent implements OnInit{
 
   /// Helpers
 
-  removeMarker(marker) {
-    this.mapService.removeMarker(marker.$key)
-  }
+  // removeMarker(marker) {
+  //   this.mapService.removeMarker(marker.$key)
+  // }
 
   flyTo(data: GeoJson) {
     this.map.flyTo({
