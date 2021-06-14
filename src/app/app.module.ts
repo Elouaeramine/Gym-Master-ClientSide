@@ -1,3 +1,4 @@
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -18,6 +19,10 @@ import { DicoverGymsHeaderComponent } from './shared/header/dicover-gyms-header/
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { GymCardComponent } from './DiscGyms/gym-card/gym-card.component';
 import { GymCardsListComponent } from './DiscGyms/gym-cards-list/gym-cards-list.component';
+import { Login2Component } from './login2/login2.component';
+import { Login2PageComponent } from './pages/login2-page/login2-page.component';
+import { JwtInterceptor } from './helpers/jwt.interceptor';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -34,8 +39,10 @@ import { GymCardsListComponent } from './DiscGyms/gym-cards-list/gym-cards-list.
     DiscoverGymsPageComponent,
     DicoverGymsHeaderComponent,
     HomePageComponent,
-    GymCardsListComponent
-    
+    GymCardsListComponent,
+    Login2Component,
+    Login2PageComponent
+
   ],
   imports: [
     BrowserModule,
@@ -44,9 +51,13 @@ import { GymCardsListComponent } from './DiscGyms/gym-cards-list/gym-cards-list.
     ValidateEqualModule,
     BrowserAnimationsModule,
     MatSelectModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
