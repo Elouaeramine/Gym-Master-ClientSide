@@ -11,7 +11,9 @@ sm:rounded-2xl md:rounded-2xl lg:rounded-t-full lg:rounded-bl-full">
                     <li class="text-sm font-poppins">Name</li>
                     <input
                         class="appearance-none bg-transparent border-none w-full text-gray-700  py-1 px-2 leading-tight focus:outline-none"
-                        type="text" placeholder="Name">
+                        type="text" placeholder="Name" 
+                        #name
+                    >
                 </div>
                 <div class="py-4 
                     lg:ml-32 md:ml-32 sm:ml-8 
@@ -19,9 +21,9 @@ sm:rounded-2xl md:rounded-2xl lg:rounded-t-full lg:rounded-bl-full">
                     <li class="text-sm font-poppins">Location</li>
                     <select
                         class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-                        id="">
-                        <option hidden>Choose location</option>
-                        <option>Example one</option>
+                        id="" #location> 
+                        <option value="" hidden>Choose location</option>
+                        <option>Centre Urbain Nord</option>
                         <option>Example one</option>
                         <option>Example one</option>
                         <option>Example one</option>
@@ -32,7 +34,9 @@ sm:rounded-2xl md:rounded-2xl lg:rounded-t-full lg:rounded-bl-full">
                 <button type="button" class="self-right text-white bg-cod-gray-500 font-medium text-base font-poppins
                         lg:mx-28 lg:w-48 lg:h-20 lg:col-span-2 lg:rounded-t-full lg:rounded-bl-full
                         md:mx-24 md:col-span-6 md:w-full
-                        sm:mx-24 sm:rounded-t-2xl sm:col-span-6 sm:w-full">
+                        sm:mx-24 sm:rounded-t-2xl sm:col-span-6 sm:w-full"
+                        (click)="onSearch()"
+                        >
                     Search
                 </button>
             </div>

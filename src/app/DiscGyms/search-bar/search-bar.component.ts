@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Gym } from 'src/Model/Gym';
+import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { Filter } from 'src/Model/Filter';
 
 @Component({
   selector: 'app-search-bar',
@@ -7,22 +7,17 @@ import { Gym } from 'src/Model/Gym';
   styleUrls: ['./search-bar.component.scss']
 })
 export class SearchBarComponent implements OnInit {
-  // private _searchByName: any;
-  // get searchByName(): any {
-  //   return this._searchByName;
-  // }
-  // set searchByName(value: any){
-  //   this._searchByName=value;
-  //   this.filteredGyms = this.filterGyms(value);
-  // }
-  // filterGyms(searchString: any){
+  @Output () searchEvent: EventEmitter<Filter> = new EventEmitter<Filter>();
+  @ViewChild ("name") searchName!: ElementRef; 
+  @ViewChild ("location") searchLocation!: ElementRef; 
+  filter!: Filter;
 
-  // }
-
+  onSearch(){
+    this.filter= new Filter(this.searchName.nativeElement.value, this.searchLocation.nativeElement.value);
+    this.searchEvent.emit(this.filter);
+  }
   
   constructor() { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

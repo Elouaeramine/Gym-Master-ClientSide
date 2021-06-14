@@ -21,6 +21,7 @@ import { GymCardsListComponent } from './DiscGyms/gym-cards-list/gym-cards-list.
 import { Login2Component } from './login2/login2.component';
 import { Login2PageComponent } from './pages/login2-page/login2-page.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,6 @@ import { Login2PageComponent } from './pages/login2-page/login2-page.component';
     GymCardsListComponent,
     Login2Component,
     Login2PageComponent
-    
   ],
   imports: [
     BrowserModule,

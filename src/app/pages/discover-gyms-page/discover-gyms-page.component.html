@@ -1,12 +1,17 @@
 <app-navbar></app-navbar>
 <app-dicover-gyms-header></app-dicover-gyms-header>
-<app-search-bar></app-search-bar>
+<app-search-bar (searchEvent)="onSearch($event)" ></app-search-bar>
 <div class="grid grid-cols-6">
     <div class="sm:col-span-6 md:col-span-6 lg:col-start-1 lg:col-end-3">
-        <app-filterbar></app-filterbar>
+        <app-filterbar (sideFilterEvent)="onSideFilter($event)" ></app-filterbar>
     </div>
     <div class="md:col-span-6 lg:col-span-4 lg:col-end-7 ">
-        <app-gym-cards-list></app-gym-cards-list>
+        <app-gym-cards-list
+          [searchedName]="searchName"
+          [searchedLocation]="searchLocation"     
+          [sideFilter] = "sideFilter"
+          >
+        </app-gym-cards-list>
     </div>
 </div>
 <app-footer></app-footer>
