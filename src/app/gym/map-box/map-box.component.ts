@@ -13,7 +13,7 @@ export class MapBoxComponent implements OnInit{
 
   /// default settings
   map: mapboxgl.Map | any;
-  style = 'mapbox://styles/mapbox/outdoors-v9';
+  style = 'mapbox://styles/mapbox/streets-v11';
   lat = 37.75;
   lng = -122.41;
   message = 'Hello World!';
@@ -52,21 +52,28 @@ export class MapBoxComponent implements OnInit{
     this.map = new mapboxgl.Map({
       container: 'map',
       style: this.style,
-      zoom: 13,
+      zoom: 8,
       center: [this.lng, this.lat]
+      
     });
 
+     //mapboxgl.accessToken = 'pk.eyJ1IjoibWVyeWVlZW0xOCIsImEiOiJja3B2NmxzeDgwaXZ3MnFwYW40MXdwaTFnIn0.W9RWIyaOXH2kH5kKRr-rug';
 
+
+  // Create a default Marker, colored black.
+   
     /// Add map controls
     this.map.addControl(new mapboxgl.NavigationControl());
+    var marker2 = new mapboxgl.Marker({ color: 'black'})
+    .setLngLat([12.65147, 55.608166])
+    .addTo(this.map); 
 
-
-    //// Add Marker on Click
+    /* Add Marker on Click
     this.map.on('click', (event: { lngLat: { lng: any; lat: any; }; }) => {
       const coordinates = [event.lngLat.lng, event.lngLat.lat]
       const newMarker   = new GeoJson(coordinates, { message: this.message })
       // this.mapService.createMarker(newMarker)
-    })
+    })*/
 
 
     /// Add realtime firebase data on map load
@@ -127,3 +134,4 @@ export class MapBoxComponent implements OnInit{
     })
   }
 }
+

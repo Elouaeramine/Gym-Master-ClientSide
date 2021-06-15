@@ -1,3 +1,46 @@
 <app-navbar></app-navbar>
 <app-gym-carousel></app-gym-carousel>
+<div class=" p-8 mx-auto md:px-12">
+        <h1 class="text-[40px] font-bold text-center  md:text-center ">Galaxy Gym</h1>
+        <div class=" flex align-items-center justify-center">
+            <img  class=" transform scale-50" src="\assets\images\pin.png" alt="">
+            <p class=" text-[12px] text-[#777777] md:text-center mb-0">Centre Urbain Nord</p> 
+        </div>
+</div>
 <app-map-box></app-map-box>
+<div class=" p-4">
+    <h1 class="text-[25px] font-bold text-center  md:text-center ">Activities</h1>
+    <div class="border-2 bg-[#000] w-14 mx-auto "></div>
+</div>
+<app-activities></app-activities>
+<div class=" p-4">
+    <h1 class="text-[25px] font-bold text-center  md:text-center ">Offers</h1>
+    <div class="border-2 bg-[#000] w-14 mx-auto "></div>
+</div>
+
+<div class="flex  justify-center p-2 mx-auto md:px-12" >
+<p class="px-2" [ngClass]="{'font-bold': !isChecked, 'font-normal': isChecked}">Annual Plan</p>
+<div class="toggler">
+	<!-- Component Start -->
+	<input class="hidden " type="checkbox" id="toggle_1" value="1" [checked] = "isChecked" (change)="isChecked = !isChecked">
+	<label class="flex items-center w-10 border-2 border-black h-6 p-1 rounded-full cursor-pointer" for="toggle_1">
+		<span class="w-4 h-4 bg-black  rounded-full"></span>
+	</label>
+	<!-- Component End  -->
+</div>
+<p class="px-2" [ngClass]="{'font-bold': isChecked, 'font-normal': !isChecked}">Monthly Plan</p> 
+</div>
+<app-pay-plans></app-pay-plans>
+<div class="flex items-center ">
+    <div class=" p-4">
+        <h1 class="text-[25px] font-bold   ">What do other people say ?</h1>
+        <div class="border-2 bg-[#000] w-14  "></div>
+    </div>
+    <div class="grid grid-cols-2 ">
+        <img   class=" transform scale-[.6] " src="\assets\images\arrow-back.png" alt="back">
+        <img  class=" transform scale-[.6]" src="\assets\images\arrow-forward.png" alt="forward">
+    </div>      
+</div>
+<app-reviews></app-reviews>
+<p></p>
+<app-footer></app-footer>

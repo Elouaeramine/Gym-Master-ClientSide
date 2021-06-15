@@ -27,6 +27,11 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 import { GymPageComponent } from './pages/gym-page/gym-page/gym-page.component';
 import { MapBoxComponent } from './gym/map-box/map-box.component';
 import { MapService } from './services/map.service';
+import { ActivitiesComponent } from './gym/activities/activities.component';
+import { PlanComponent } from './gym/plan/plan.component';
+import { PayPlansComponent } from './gym/pay-plans/pay-plans.component';
+import { ReviewComponent } from './gym/review/review.component';
+import { ReviewsComponent } from './gym/reviews/reviews.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +56,13 @@ import { MapService } from './services/map.service';
       BlogHeaderComponent,
       GymCarouselComponent,
       GymPageComponent,
-      MapBoxComponent
+      MapBoxComponent,
+      ActivitiesComponent,
+      PlanComponent,
+      PayPlansComponent,
+      ReviewComponent,
+      ReviewsComponent,
+
 
   ],
   imports: [

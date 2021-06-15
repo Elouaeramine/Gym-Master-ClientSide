@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GymPageComponent implements OnInit {
 
+  isChecked: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
