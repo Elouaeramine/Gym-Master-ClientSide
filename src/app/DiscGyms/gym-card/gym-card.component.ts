@@ -8,14 +8,14 @@ import { Gym } from 'src/Model/Gym';
 })
 export class GymCardComponent implements OnInit {
   @Input() data!: Gym;
-  
+
   constructor() { }
 
   selectColor = 'yellow';
   item = 0;
   maxRating = 5;
   myRating!: number;
- 
+
   selectedRating(rate: number) {
     console.log('your rating is--', rate);
     this.myRating = rate;

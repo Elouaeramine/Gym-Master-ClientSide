@@ -4,10 +4,7 @@
     <img class="px-4 py-4" [src]="data.imageUrl" alt="Avatar" style="width:100%">
     <div class="md:mt-5 lg:mt-2 h-16 rounded-t-3xl rounded-bl-md bg-cod-gray-500 ">
       <p class="text-white text-xl font-poppins pl-2 pt-1 ">{{data.name}}</p>
-
       <div class="grid grid-col-2">
-
-
         <div class="flex">
           <div>
             <img src="https://img.icons8.com/small/16/ffffff/marker.png" class="pl-4" />
@@ -16,13 +13,11 @@
             {{data.location}}
           </div>
         </div>
-
         <div class="col-start-5">
           <lib-star-rate [selctedColor]="selectColor" [star]="item" [maxRating]="maxRating"
             (ratingSelection)="selectedRating($event)">
           </lib-star-rate>
         </div>
-
       </div>
     </div>
   </div>
