@@ -21,6 +21,7 @@ import { GymCardsListComponent } from './DiscGyms/gym-cards-list/gym-cards-list.
 import { Login2Component } from './login2/login2.component';
 import { Login2PageComponent } from './pages/login2-page/login2-page.component';
 import {MatIconModule} from '@angular/material/icon';
+import { StarRateModule } from 'ng-star-rate';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import {MatIconModule} from '@angular/material/icon';
     BrowserAnimationsModule,
     MatSelectModule,
     AppRoutingModule,
-    MatIconModule
+    MatIconModule,
+    StarRateModule
 
   ],
   providers: [],
