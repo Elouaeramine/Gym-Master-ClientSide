@@ -25,7 +25,6 @@ register (loginForm: NgForm){
 }
 
 addUser(loginForm: NgForm){
-  // console.log(loginForm.value);
   this.usersService.addUser(loginForm.value); 
 }
 

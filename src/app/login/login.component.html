@@ -5,34 +5,34 @@
   (ngSubmit)="register(loginForm)"
   >
 
-     <label for="fname" class="font-medium text-base">First name*</label><br>
+     <label for="first_name" class="font-medium text-base">First name*</label><br>
       <input
       ngModel 
-      #fname="ngModel"
-      (change)="log(fname)"
+      #first_name="ngModel"
+      (change)="log(first_name)"
       required
-      name="fname" type="text" id="fname" placeholder="First Name"
+      name="first_name" type="text" id="first_name" placeholder="First Name"
       class="form-control placeholder-gray-500 placeholder-opacity-50 w-96 rounded-full my-4 "
       >
-      <div class="text-red" *ngIf="fname.touched && !fname.valid">
-        <div *ngIf="fname.errors?.required">
+      <div class="text-red" *ngIf="first_name.touched && !first_name.valid">
+        <div *ngIf="first_name.errors?.required">
           First Name is required.
         </div>
       </div>
       <br>
        
 
-     <label for="lname" class="font-medium text-base">Last name*</label><br>
+     <label for="last_name" class="font-medium text-base">Last name*</label><br>
       <input 
       ngModel 
-      #lname="ngModel"
-      (change)="log(lname)"
+      #last_name="ngModel"
+      (change)="log(last_name)"
       required
-      name="lname" type="text" id="lname" placeholder="Last Name" 
+      name="last_name" type="text" id="last_name" placeholder="Last Name" 
       class="placeholder-gray-500 placeholder-opacity-50 w-96 rounded-full my-4"
       >
-      <div class="text-red" *ngIf="lname.touched && !lname.valid">
-        <div *ngIf="lname.errors?.required">
+      <div class="text-red" *ngIf="last_name.touched && !last_name.valid">
+        <div *ngIf="last_name.errors?.required">
           Last Name is required.
         </div>
       </div>
@@ -77,21 +77,21 @@
       <br>
 
 
-     <label for="cPassword" class="font-medium text-base">Confirm Password*</label><br>
+     <label for="confirm_password" class="font-medium text-base">Confirm Password*</label><br>
       <input 
       ngModel 
-      #cPassword="ngModel"
-      (change)="log(cPassword)"
+      #confirm_password="ngModel"
+      (change)="log(confirm_password)"
       required
       ngValidateEqual="password"
-      name="cpassword" type="password" id="cpassword" placeholder="Confirm Password" 
+      name="confirm_password" type="password" id="confirm_password" placeholder="Confirm Password" 
       class="placeholder-gray-500 placeholder-opacity-50 w-96 rounded-full my-4"
       >
-      <div class="text-red" *ngIf=" !cPassword.valid && cPassword.touched">
-        <div *ngIf="cPassword.errors?.required">
+      <div class="text-red" *ngIf=" !confirm_password.valid && confirm_password.touched">
+        <div *ngIf="confirm_password.errors?.required">
           Please confirm your password. 
         </div>
-        <div class="warning-text" *ngIf="cPassword.hasError('notEqual')">
+        <div class="warning-text" *ngIf="confirm_password.hasError('notEqual')">
           Passwords Don't Match
         </div>
       </div>
