@@ -1,0 +1,109 @@
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+header h1 {
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+header h2 {
+    margin-bottom: .0rem;
+}
+
+header h1::after {
+    content:"";
+    position: absolute;
+    bottom:0;
+    left: 0;
+    transform: rotate(180deg);
+    border: 2px solid white;
+    width: 100px;
+}
+
+.small-demi-circle, .big-demi-circle {
+    position: absolute;
+    bottom: 0;
+    background-color: #fff;
+    width: 13rem;
+}
+
+.small-demi-circle {
+    right: 19rem;
+    height: 26rem;
+    border-radius: 5.5rem 5.5rem 0 0;
+}
+
+.big-demi-circle {
+    right: 3rem;
+    height: 37rem;
+    border-radius: 5.5rem 5.5rem 0 0;
+}
+
+section.about p.about-text, section.top-gyms > p, section.blog > p {
+    width: 60%;
+}
+
+section.about .flex .card-number {
+    width: 70px;
+    height: 70px;
+    margin-right: .8rem;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.section-header {
+    position: relative;
+    display: inline-block;
+    padding-bottom: .5rem;
+    margin-bottom: 2rem;
+}
+
+.section-header::after {
+    content: "";
+    width: 6rem;
+    height: .2rem;
+    background-color: #000;
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 3rem);  
+}
+
+.about .black {
+    background-color: #000;
+    top:0;
+    border-radius: 0 0 5.5rem 5.5rem;
+}
+
+.top-gyms {
+    background-color: #000;
+    color: white;
+    padding-bottom: 7.5rem;
+}
+
+.top-gyms h2::after {
+    background-color: #fff;
+}
+
+.top-gyms .gym-cards div {
+    width: calc(25% - 3rem);
+    border: 1px solid #fff;
+    margin-right: 3rem;
+    margin-bottom: 3rem;
+}
+
+.top-gyms .gym-button {
+    display: inline-block;
+    padding: 1rem 3rem;
+    border: 2px solid #fff;
+    border-radius: 2rem 2rem 0 2rem;
+    float: right;
+    cursor: pointer;
+    font-size: 25px;
+}

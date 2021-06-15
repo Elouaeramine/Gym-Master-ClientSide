@@ -26,6 +26,7 @@
     "@ngxs/storage-plugin": "^3.7.1",
     "@ngxs/store": "^3.7.1",
     "font-awesome": "^4.7.0",
+    "ng-starrating": "^1.0.20",
     "ng-validate-equal": "^1.0.4",
     "ng2-search-filter": "^0.5.1",
     "ngx-toastr": "^14.0.0",

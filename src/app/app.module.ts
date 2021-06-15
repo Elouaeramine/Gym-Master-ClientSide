@@ -23,6 +23,8 @@ import { Login2Component } from './login2/login2.component';
 import { Login2PageComponent } from './pages/login2-page/login2-page.component';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { ToastrModule } from 'ngx-toastr';
+import { GymCardComponent as GymCard }  from './shared/gym-card/gym-card.component';
+import { RatingModule } from 'ng-starrating';
 
 @NgModule({
   declarations: [
@@ -41,8 +43,8 @@ import { ToastrModule } from 'ngx-toastr';
     HomePageComponent,
     GymCardsListComponent,
     Login2Component,
-    Login2PageComponent
-
+    Login2PageComponent,
+    GymCard
   ],
   imports: [
     BrowserModule,
@@ -53,7 +55,8 @@ import { ToastrModule } from 'ngx-toastr';
     MatSelectModule,
     AppRoutingModule,
     HttpClientModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    RatingModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
