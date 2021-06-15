@@ -11,15 +11,11 @@ export class GymCardComponent implements OnInit {
 
   constructor() { }
 
-  selectColor = 'yellow';
-  item = 0;
+  
+  unCheckedColor = 'white';
+  checkedColor = 'yellow';
+  rating = 3.5;
   maxRating = 5;
-  myRating!: number;
-
-  selectedRating(rate: number) {
-    console.log('your rating is--', rate);
-    this.myRating = rate;
-  }
 
   ngOnInit(): void {
   }

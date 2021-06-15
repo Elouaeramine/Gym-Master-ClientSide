@@ -27,6 +27,7 @@
     "@material-ui/icons": "^4.11.2",
     "font-awesome": "^4.7.0",
     "ng-star-rate": "^1.0.1",
+    "ng-starrating": "^1.0.20",
     "ng-validate-equal": "^1.0.4",
     "ng2-search-filter": "^0.5.1",
     "rxjs": "~6.6.0",
