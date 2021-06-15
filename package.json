@@ -23,6 +23,7 @@
     "@angular/router": "~11.2.11",
     "@fortawesome/angular-fontawesome": "^0.8.2",
     "@fortawesome/fontawesome-free": "^5.15.3",
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
     "@material-ui/icons": "^4.11.2",
     "font-awesome": "^4.7.0",
     "ng-validate-equal": "^1.0.4",
