@@ -1,7 +1,9 @@
 import { stringify } from '@angular/compiler/src/util';
 import { Component, Input, OnInit } from '@angular/core';
+import { Access } from 'src/Model/Access';
 import { Activities } from 'src/Model/Activities';
 import { Gym } from 'src/Model/Gym';
+import { Open } from 'src/Model/Open';
 import { SideFilter } from 'src/Model/SideFilter';
 
 @Component({
@@ -49,13 +51,35 @@ export class GymCardsListComponent implements OnInit {
     }
     const sideFilterActs: string[] = sideFilter.activities;
     const gymActs: Activities[] = gym.activities;
-    if (sideFilterActs.length === 0) {
+
+    const sideFilterAccess: string[] = sideFilter.access;
+    const gymAccess: Access[] = gym.access;
+
+    const sideFilterOpen: string[] = sideFilter.openOnWeekends;
+    const gymOpen: Open[] = gym.openOnWeekends;
+
+    if (sideFilterActs.length === 0 && sideFilterAccess.length === 0 && sideFilterOpen.length === 0) {
       return true;
     }
-    if (sideFilterActs.length > 0) {
+
+    if (sideFilterActs.length > 0 || sideFilterAccess.length > 0 || sideFilterOpen.length > 0) {
       for (let i = 0; i < sideFilterActs.length; i++) {
         for (let j = 0; j < gymActs.length; j++) {
           if (sideFilterActs[i].toUpperCase() === gymActs[j].name.toUpperCase()) {
+            return true;
+          }
+        }
+      }
+      for (let i = 0; i < sideFilterAccess.length; i++) {
+        for (let j = 0; j < gymAccess.length; j++) {
+          if (sideFilterAccess[i].toUpperCase() === gymAccess[j].name.toUpperCase()) {
+            return true;
+          }
+        }
+      }
+      for (let i = 0; i < sideFilterOpen.length; i++) {
+        for (let j = 0; j < gymOpen.length; j++) {
+          if (sideFilterOpen[i].toUpperCase() === gymOpen[j].value.toUpperCase()) {
             return true;
           }
         }
@@ -72,40 +96,72 @@ export class GymCardsListComponent implements OnInit {
         name: 'California Gym',
         location: 'Centre Urbain Nord',
         activities: [{ name: 'Swimming', value: 'Swimming' }, { name: 'Zumba', value: 'Zumba' }],
-        access: 'Mixt',
-        openOnWeekends: 'Yes'
+        access: [{ name: 'Mixt' }],
+        openOnWeekends: [{ value: 'Yes' }]
       },
       {
         imageUrl: 'https://img-19.ccm2.net/8vUCl8TXZfwTt7zAOkBkuDRHiT8=/1240x/smart/b829396acc244fd484c5ddcdcb2b08f3/ccmcms-commentcamarche/20494859.jpg',
         name: 'Oxygéne',
         location: 'Aouina',
         activities: [{ name: 'Musculation', value: 'Musculation' }, { name: 'Yoga', value: 'Yoga' }],
-        access: 'Mixt',
-        openOnWeekends: 'Yes'
+        access: [{ name: 'Mixt' }],
+        openOnWeekends: [{ value: 'Yes' }]
       },
       {
         imageUrl: 'https://img-19.ccm2.net/8vUCl8TXZfwTt7zAOkBkuDRHiT8=/1240x/smart/b829396acc244fd484c5ddcdcb2b08f3/ccmcms-commentcamarche/20494859.jpg',
         name: 'California Gym',
         location: 'Centre Urbain Nord',
         activities: [{ name: 'Aerobic', value: 'Aerobic' }, { name: 'Yoga', value: 'Yoga' }],
-        access: 'Men',
-        openOnWeekends: 'Yes'
+        access: [{ name: 'Women' }],
+        openOnWeekends: [{ value: 'Yes' }]
       },
       {
         imageUrl: 'https://img-19.ccm2.net/8vUCl8TXZfwTt7zAOkBkuDRHiT8=/1240x/smart/b829396acc244fd484c5ddcdcb2b08f3/ccmcms-commentcamarche/20494859.jpg',
         name: 'Oxygéne',
         location: 'Aouina',
         activities: [{ name: 'Aerobic', value: 'Aerobic' }, { name: 'Yoga', value: 'Yoga' }],
-        access: 'Men',
-        openOnWeekends: 'Yes'
+        access: [{ name: 'Men' }],
+        openOnWeekends: [{ value: 'No' }]
       },
       {
         imageUrl: 'https://img-19.ccm2.net/8vUCl8TXZfwTt7zAOkBkuDRHiT8=/1240x/smart/b829396acc244fd484c5ddcdcb2b08f3/ccmcms-commentcamarche/20494859.jpg',
         name: 'California Gym',
         location: 'Centre Urbain Nord',
         activities: [{ name: 'Squach', value: 'Squach' }, { name: 'Spinning', value: 'Spinning' }],
-        access: 'Women',
-        openOnWeekends: 'Yes'
+        access: [{ name: 'Women' }],
+        openOnWeekends: [{ value: 'No' }]
+      },
+      {
+        imageUrl: 'https://img-19.ccm2.net/8vUCl8TXZfwTt7zAOkBkuDRHiT8=/1240x/smart/b829396acc244fd484c5ddcdcb2b08f3/ccmcms-commentcamarche/20494859.jpg',
+        name: 'Fitness Gym',
+        location: 'Tunis',
+        activities: [{ name: 'Squach', value: 'Squach' }, { name: 'Spinning', value: 'Spinning' }],
+        access: [{ name: 'Men' }],
+        openOnWeekends: [{ value: 'No' }]
+      },
+      {
+        imageUrl: 'https://img-19.ccm2.net/8vUCl8TXZfwTt7zAOkBkuDRHiT8=/1240x/smart/b829396acc244fd484c5ddcdcb2b08f3/ccmcms-commentcamarche/20494859.jpg',
+        name: 'Fitness Gym',
+        location: 'Tunis',
+        activities: [{ name: 'Squach', value: 'Squach' }, { name: 'Spinning', value: 'Spinning' }],
+        access: [{ name: 'Men' }],
+        openOnWeekends: [{ value: 'No' }]
+      },
+      {
+        imageUrl: 'https://img-19.ccm2.net/8vUCl8TXZfwTt7zAOkBkuDRHiT8=/1240x/smart/b829396acc244fd484c5ddcdcb2b08f3/ccmcms-commentcamarche/20494859.jpg',
+        name: 'Lady Gym',
+        location: 'La Marsa',
+        activities: [{ name: 'Squach', value: 'Squach' }, { name: 'Spinning', value: 'Spinning' }],
+        access: [{ name: 'Women' }],
+        openOnWeekends: [{ value: 'Yes' }]
+      },
+      {
+        imageUrl: 'https://img-19.ccm2.net/8vUCl8TXZfwTt7zAOkBkuDRHiT8=/1240x/smart/b829396acc244fd484c5ddcdcb2b08f3/ccmcms-commentcamarche/20494859.jpg',
+        name: 'Panda Gym',
+        location: 'El Mourouj',
+        activities: [{ name: 'Squach', value: 'Squach' }, { name: 'Spinning', value: 'Spinning' }],
+        access: [{ name: 'Mixt' }],
+        openOnWeekends: [{ value: 'No' }]
       }
 
     ];

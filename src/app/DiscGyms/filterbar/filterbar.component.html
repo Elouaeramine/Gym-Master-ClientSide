@@ -106,12 +106,13 @@
       <div class="py-8 lg:mx-0">
         <span class="font-poppins text-lg">Access</span>
         <div class="py-2" *ngFor="let acc of access">
-          <input type="radio" class="form-input-radio h-6 w-6 text-black" 
-          name="access" 
+          <input type="checkbox" class="rounded-full bg-black h-6 w-6" 
+          name="{{acc.name}}" 
           #access
-          value="{{acc}}"
+          value="{{acc.name}}"
+          (change)="onSearchAccess($event)"
           >
-          <label class="px-2" for="limited">{{acc}}</label>
+          <label class="px-2">{{acc.name}}</label>
         </div>
       </div>
 
@@ -119,12 +120,13 @@
       <div class="py-8 lg:mx-0">
         <span class="font-poppins text-lg">Open on weekends</span>
         <div class="py-2" *ngFor="let op of openOnWeekend">
-          <input type="radio" class="form-radio h-6 w-6 text-black" 
-          name="weekends"
+          <input type="checkbox" class="rounded-full bg-black h-6 w-6" 
+          name="{{op.value}}"
           #openOnWeekends
-          value="{{op}}"
+          value="{{op.value}}"
+          (change)="onSearchOpen($event)"
           >
-          <label class="px-2" for="yes">{{op}}</label>
+          <label class="px-2">{{op.value}}</label>
         </div>
       </div>
     </div>

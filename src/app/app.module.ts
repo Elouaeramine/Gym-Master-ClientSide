@@ -48,7 +48,7 @@ import { Login2PageComponent } from './pages/login2-page/login2-page.component';
     ValidateEqualModule,
     BrowserAnimationsModule,
     MatSelectModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
