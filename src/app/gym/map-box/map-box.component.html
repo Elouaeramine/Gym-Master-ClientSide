@@ -1,0 +1,7 @@
+<div class="container relative p-4 mx-auto">
+<div *ngFor="let marker of markers | async">
+  <button (click)="flyTo(marker)">{{ marker.properties.message }}</button>
+  <!-- <button (click)="removeMarker(marker)">Delete</button> -->
+</div>
+<div class="map mb-3" id="map"></div>
+</div>

@@ -1,0 +1,17 @@
+.toggler input[type="checkbox"]:checked + label {
+	justify-content: flex-end;
+	background-color: rgb(255, 255, 255);
+}
+
+.toggler input[type="checkbox"]:checked + label span {
+	background-color: rgb(0, 0, 0);
+}
+
+.toggler input[type="checkbox"]+label{
+	justify-content: flex-start;
+	background-color: rgb(255, 255, 255);
+}
+
+.toggler input[type="checkbox"]+label span {
+	background-color: rgb(0, 0, 0);
+}

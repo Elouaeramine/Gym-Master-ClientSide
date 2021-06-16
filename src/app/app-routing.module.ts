@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { GymPageComponent } from './pages/gym-page/gym-page/gym-page.component';
 import { BlogPageComponent } from './pages/blog-page/blog-page.component';
 import { AuthGuard } from './helpers/auth.guard';
 import { DiscoverGymsPageComponent } from './pages/discover-gyms-page/discover-gyms-page.component';
@@ -14,7 +15,7 @@ const routes: Routes = [
     {path: 'blog', component: BlogPageComponent},
     {path: 'discovergyms', component: DiscoverGymsPageComponent , canActivate : [AuthGuard]},
     {path: 'login', component: Login2PageComponent},
-    {path: 'gym/:id', component: HomePageComponent},
+    {path: 'gym/:id', component: GymPageComponent},
 
 
     // otherwise redirect to home

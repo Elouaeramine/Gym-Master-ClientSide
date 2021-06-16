@@ -23,6 +23,16 @@ import { BlogPageComponent } from './pages/blog-page/blog-page.component';
 import { BlogCardComponent } from './blog/blog-card/blog-card.component';
 import { BlogCardsListComponent } from './blog/blog-cards-list/blog-cards-list.component';
 import { BlogHeaderComponent } from './shared/header/blog-header/blog-header.component';
+import { GymCarouselComponent } from './gym/gym-carousel/gym-carousel.component';
+import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
+import { GymPageComponent } from './pages/gym-page/gym-page/gym-page.component';
+import { MapBoxComponent } from './gym/map-box/map-box.component';
+import { MapService } from './services/map.service';
+import { ActivitiesComponent } from './gym/activities/activities.component';
+import { PlanComponent } from './gym/plan/plan.component';
+import { PayPlansComponent } from './gym/pay-plans/pay-plans.component';
+import { ReviewComponent } from './gym/review/review.component';
+import { ReviewsComponent } from './gym/reviews/reviews.component';
 import { Login2Component } from './login2/login2.component';
 import { Login2PageComponent } from './pages/login2-page/login2-page.component';
 import {MatIconModule} from '@angular/material/icon';
@@ -52,6 +62,14 @@ import { RatingModule } from 'ng-starrating';
       BlogCardComponent,
       BlogCardsListComponent,
       BlogHeaderComponent,
+      GymCarouselComponent,
+      GymPageComponent,
+      MapBoxComponent,
+      ActivitiesComponent,
+      PlanComponent,
+      PayPlansComponent,
+      ReviewComponent,
+      ReviewsComponent,
     Login2Component,
     Login2PageComponent,
     GymCard
@@ -64,6 +82,7 @@ import { RatingModule } from 'ng-starrating';
     BrowserAnimationsModule,
     MatSelectModule,
     AppRoutingModule,
+    NgxUsefulSwiperModule
     MatIconModule,
     StarRateModule,
     HttpClientModule,
@@ -71,6 +90,7 @@ import { RatingModule } from 'ng-starrating';
     RatingModule
   ],
   providers: [
+    MapService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
