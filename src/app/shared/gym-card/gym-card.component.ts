@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { GymHome } from './../../../Model/GymHome';
+import { GymService } from './../../services/gym.service';
+import { Component, Input, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-gym',
@@ -9,12 +12,17 @@ export class GymCardComponent implements OnInit {
 
   unCheckedColor = 'white';
   checkedColor = 'yellow';
-  rating = 3.5;
+  @Input() rating = 3.5;
   maxRating = 5;
+
+  @Input() name = '';
+  @Input() imageUrl = '';
+
 
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

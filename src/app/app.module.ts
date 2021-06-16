@@ -19,6 +19,10 @@ import { DicoverGymsHeaderComponent } from './shared/header/dicover-gyms-header/
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { GymCardComponent } from './DiscGyms/gym-card/gym-card.component';
 import { GymCardsListComponent } from './DiscGyms/gym-cards-list/gym-cards-list.component';
+import { BlogPageComponent } from './pages/blog-page/blog-page.component';
+import { BlogCardComponent } from './blog/blog-card/blog-card.component';
+import { BlogCardsListComponent } from './blog/blog-cards-list/blog-cards-list.component';
+import { BlogHeaderComponent } from './shared/header/blog-header/blog-header.component';
 import { Login2Component } from './login2/login2.component';
 import { Login2PageComponent } from './pages/login2-page/login2-page.component';
 import {MatIconModule} from '@angular/material/icon';
@@ -44,6 +48,10 @@ import { RatingModule } from 'ng-starrating';
     DicoverGymsHeaderComponent,
     HomePageComponent,
     GymCardsListComponent,
+    BlogPageComponent,
+      BlogCardComponent,
+      BlogCardsListComponent,
+      BlogHeaderComponent,
     Login2Component,
     Login2PageComponent,
     GymCard

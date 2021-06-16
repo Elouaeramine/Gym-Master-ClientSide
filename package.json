@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.1102.12",
-    "@angular/cli": "~11.2.10",
+    "@angular/cli": "^11.2.10",
     "@angular/compiler-cli": "~11.2.11",
     "@tailwindcss/custom-forms": "^0.2.1",
     "@tailwindcss/forms": "^0.3.2",
