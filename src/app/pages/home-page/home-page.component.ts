@@ -2,6 +2,7 @@ import { GymService } from './../../services/gym.service';
 import { BlogService } from './../../services/blog.service';
 import { Component, OnInit } from '@angular/core';
 import { GymHome } from 'src/Model/GymHome';
+import { Blog } from 'src/Model/Blog';
 
 @Component({
   selector: 'app-home-page',
@@ -12,6 +13,7 @@ export class HomePageComponent implements OnInit {
 
 
   gyms: GymHome[] = [] ;
+  blogs: Blog[] = []
 
   constructor( private gymService :GymService, private blogService : BlogService) { }
 
