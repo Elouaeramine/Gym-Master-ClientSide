@@ -9,5 +9,9 @@ import { Injectable } from '@angular/core';
 })
 export class BlogService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  getBlogs() :Observable<Blog[]> {
+    return this.http.get<Blog[]>(`${environment.apiUrl}/blog`);
+  }
 }

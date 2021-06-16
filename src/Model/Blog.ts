@@ -1,5 +1,9 @@
 export interface Blog {
     id: number;
-    name: string;
-    description: string;
+    title: string;
+    author: string;
+    imageUrl :string;
+    coverImageUrl :string;
+    summary : string;
+    article :string;
   }

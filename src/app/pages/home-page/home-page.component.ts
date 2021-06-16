@@ -13,9 +13,9 @@ export class HomePageComponent implements OnInit {
 
 
   gyms: GymHome[] = [] ;
-  blogs: number[] = [1, 2, 3]
+  blogs: Blog[] = [];
 
-  constructor( private gymService :GymService, private blogService : BlogService) { }
+  constructor( private gymService : GymService, private blogService : BlogService) { }
 
   ngOnInit(): void {
     this.gymService.getGyms().subscribe(
@@ -28,6 +28,15 @@ export class HomePageComponent implements OnInit {
       },
       (error) => {
         console.log('Error Occured');
+      }
+    );
+    this.blogService.getBlogs().subscribe(
+      (data)=> {
+        this.blogs =[...data];
+        console.log(data);
+      },
+      (error) =>{
+        console.log('Error Occured ', error);
       }
     );
 

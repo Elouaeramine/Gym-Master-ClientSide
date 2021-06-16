@@ -1,5 +1,14 @@
-<div class="flex justify-between w-[100%] ">
-    <div class="w-[24%]">
+<div class="flex justify-between w-[100%] " >
+    <div class="w-[24%]" *ngFor="let blog of blogs" >
+        <app-blog-card
+        [title]="blog.title"
+        [author]="blog.author"
+        [summary]="blog.summary"
+        [imageUrl]="blog.imageUrl"
+        >
+      </app-blog-card>
+    </div>
+    <!-- <div class="w-[24%]">
         <app-blog-card></app-blog-card>
     </div>
     <div class="w-[24%]">
@@ -7,9 +16,6 @@
     </div>
     <div class="w-[24%]">
         <app-blog-card></app-blog-card>
-    </div>
-    <div class="w-[24%]">
-        <app-blog-card></app-blog-card>
-    </div>
-    
+    </div> -->
+
 </div>
