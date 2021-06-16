@@ -16,7 +16,7 @@
         <mat-icon>horizontal_split</mat-icon>
       </button>
     </div>
-    <div [ngClass]="{'hidden': !showMenu, 'flex': showMenu}" class="lg:flex lg:flex-grow items-center w-screen p-0">
+    <div [ngClass]="{'hidden': !showMenu, 'flex': showMenu}" class="lg:flex lg:flex-grow items-center">
       <ul class="flex flex-col lg:flex-row list-none ml-auto">
         <li class="nav-item">
           <a class="px-3 py-2 flex items-center text-lg font-poppins leading-snug text-cod-gray-500 hover:underline"
@@ -36,7 +36,7 @@
             <span class="ml-2 lg:my-2">Blog</span>
           </a>
         </li>
-        <li class="nav-item" *ngIf="!isLoggedIn">
+        <li class="nav-item">
           <a routerLink="/signup">
             <button
               class="w-24 text-black bg-white border-cod-gray-500 border-4 rounded-full py-3 md:my-2 lg:mx-4 lg:my-0 font-medium text-base font-poppins">
@@ -44,19 +44,11 @@
             </button>
           </a>
         </li>
-        <li class="nav-item" *ngIf="!isLoggedIn">
+        <li class="nav-item">
           <a routerLink="/login">
             <button
               class="w-24 text-white bg-cod-gray-500 border-cod-gray-500 border-4 rounded-full py-3 md:my-2 lg:mx-4 lg:my-0 font-medium text-base font-poppins">
               Login
-            </button>
-          </a>
-        </li>
-        <li class="nav-item" *ngIf="isLoggedIn" >
-          <a routerLink="/login" (click)="logout()">
-            <button
-              class="w-24 text-white bg-cod-gray-500 border-cod-gray-500 border-4 rounded-full py-3 md:my-2 lg:mx-4 lg:my-0 font-medium text-base font-poppins">
-              Logout
             </button>
           </a>
         </li>
