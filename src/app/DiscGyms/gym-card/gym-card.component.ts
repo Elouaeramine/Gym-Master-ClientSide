@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Gym } from 'src/Model/Gym';
 
 @Component({
@@ -9,7 +10,9 @@ import { Gym } from 'src/Model/Gym';
 export class GymCardComponent implements OnInit {
   @Input() data!: Gym;
 
-  constructor() { }
+  constructor(
+    private activatedRoute: ActivatedRoute
+  ) { }
 
   
   unCheckedColor = 'white';
@@ -17,7 +20,15 @@ export class GymCardComponent implements OnInit {
   rating = 3.5;
   maxRating = 5;
 
+  id!: number;
+
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(
+      (params) => {
+        console.log(params);
+        this.id = +params.get('id')
+      }
+    )
   }
 
 }

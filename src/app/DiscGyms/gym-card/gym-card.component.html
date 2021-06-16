@@ -1,7 +1,9 @@
 <div class="container px-auto sm:mx-36 md:mx-auto">
-  <div
-    class="sm:w-96 md:w-72 md:h-72 lg:w-64 lg:h-64 rounded-t-xl rounded-bl-xl border-4 border-[#000000] font-poppins">
-    <img class="px-4 py-4" [src]="data.imageUrl" alt="Avatar" style="width:100%">
+  <div [routerLink]="['/gym',data.id]"
+    class="hover:cursor-pointer sm:w-96 md:w-72 md:h-72 lg:w-64 lg:h-64 rounded-t-xl rounded-bl-xl border-4 border-[#000000] font-poppins">
+    <!-- <img class="px-4 py-4" [src]="data.imageUrl" alt="Avatar" style="width:100%"> -->
+    <div class="image" [ngStyle]="{'background-image':'url('+data.imageUrl+')'}">
+    </div>
     <div class="md:mt-5 lg:mt-2 h-16 rounded-t-3xl rounded-bl-md bg-[#000000] ">
       <p class="text-white text-xl font-poppins pl-2 pt-1 ">{{data.name}}</p>
       <div class="grid grid-col-2">
@@ -17,15 +19,9 @@
           <!-- <lib-star-rate [selctedColor]="selectColor" [star]="item" [maxRating]="maxRating"
             (ratingSelection)="selectedRating($event)">
           </lib-star-rate> -->
-          <star-rating
-            [value]="rating"
-            [totalstars]="maxRating"
-            [checkedcolor]="checkedColor"
-            [uncheckedcolor]="unCheckedColor"
-            size="25"
-            [readonly]="true"
-        >
-        </star-rating>
+          <star-rating [value]="rating" [totalstars]="maxRating" [checkedcolor]="checkedColor"
+            [uncheckedcolor]="unCheckedColor" size="25" [readonly]="true">
+          </star-rating>
         </div>
       </div>
     </div>

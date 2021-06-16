@@ -14,6 +14,7 @@ const routes: Routes = [
     {path: 'blog', component: BlogPageComponent},
     {path: 'discovergyms', component: DiscoverGymsPageComponent , canActivate : [AuthGuard]},
     {path: 'login', component: Login2PageComponent},
+    {path: 'gym/:id', component: HomePageComponent},
 
 
     // otherwise redirect to home
