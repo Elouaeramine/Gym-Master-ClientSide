@@ -1,4 +1,5 @@
 import { GymService } from './../../services/gym.service';
+import { BlogService } from './../../services/blog.service';
 import { Component, OnInit } from '@angular/core';
 import { GymHome } from 'src/Model/GymHome';
 
@@ -12,7 +13,7 @@ export class HomePageComponent implements OnInit {
 
   gyms: GymHome[] = [] ;
 
-  constructor( private gymService :GymService) { }
+  constructor( private gymService :GymService, private blogService : BlogService) { }
 
   ngOnInit(): void {
     this.gymService.getGyms().subscribe(

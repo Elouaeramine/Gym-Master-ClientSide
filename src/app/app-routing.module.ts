@@ -11,7 +11,7 @@ const routes: Routes = [
     {path: '', component: HomePageComponent},
     {path: 'home', component: HomePageComponent},
     {path: 'signup', component: LoginPageComponent},
-    {path: 'blog', component: BlogPageComponent}
+    {path: 'blog', component: BlogPageComponent},
     {path: 'discovergyms', component: DiscoverGymsPageComponent , canActivate : [AuthGuard]},
     {path: 'login', component: Login2PageComponent},
 
