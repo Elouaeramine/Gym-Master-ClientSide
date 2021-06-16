@@ -7,10 +7,15 @@ import { Gym } from 'src/Model/Gym';
   styleUrls: ['./gym-card.component.scss']
 })
 export class GymCardComponent implements OnInit {
-  @Input()
-  data!: Gym;
-  
+  @Input() data!: Gym;
+
   constructor() { }
+
+  
+  unCheckedColor = 'white';
+  checkedColor = 'yellow';
+  rating = 3.5;
+  maxRating = 5;
 
   ngOnInit(): void {
   }
