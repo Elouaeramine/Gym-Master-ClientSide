@@ -24,7 +24,7 @@
                 <div class="card-number flex justify-center mr-2">
                     <h1>1</h1>
                 </div>
-                <div class="card-content"> 
+                <div class="card-content">
                     <h5 class="mb-0">Find Gyms</h5>
                     <p class="mb-0">Trem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi  vitae dicta sunt explicabo sequi nesciunt.                    </p>
                 </div>
@@ -57,17 +57,8 @@
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
         </p>
         <div class="gym-cards flex mt-16 flex-wrap">
-            <div>
-                <app-gym></app-gym>
-            </div>
-            <div>
-                <app-gym></app-gym>
-            </div>
-            <div>
-                <app-gym></app-gym>
-            </div>
-            <div>
-                <app-gym></app-gym>
+            <div *ngFor="let gym of gyms">
+                <app-gym [name]="gym.name" [imageUrl]="gym.imageUrl" [rating]="gym.rating"></app-gym>
             </div>
         </div>
         <div class="gym-button">

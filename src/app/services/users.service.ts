@@ -18,7 +18,9 @@ export class UsersService {
   public user: Observable<User>;
 
   constructor(private http: HttpClient , private router: Router , private toastr: ToastrService) {
-    this.userSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('user') || '{}'));
+
+    const a = localStorage.getItem('user');
+    this.userSubject = new BehaviorSubject<User>(a ? JSON.parse(a) : null   );
     this.user = this.userSubject.asObservable();
   }
 
@@ -47,7 +49,7 @@ export class UsersService {
     return this.http.put(`${environment.apiUrl}/user/${id}`, params)
         .pipe(map(x => {
             // update stored user if the logged in user updated their own record
-            if (id == this.userValue.id) {
+            if (id === this.userValue.id) {
                 // update local storage
                 const user = { ...this.userValue, ...params };
                 localStorage.setItem('user', JSON.stringify(user));
