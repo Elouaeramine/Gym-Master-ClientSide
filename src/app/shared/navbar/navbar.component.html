@@ -36,7 +36,7 @@
             <span class="ml-2 lg:my-2">Blog</span>
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!isLoggedIn">
           <a routerLink="/signup">
             <button
               class="w-24 text-black bg-white border-cod-gray-500 border-4 rounded-full py-3 md:my-2 lg:mx-4 lg:my-0 font-medium text-base font-poppins">
@@ -44,11 +44,19 @@
             </button>
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!isLoggedIn">
           <a routerLink="/login">
             <button
               class="w-24 text-white bg-cod-gray-500 border-cod-gray-500 border-4 rounded-full py-3 md:my-2 lg:mx-4 lg:my-0 font-medium text-base font-poppins">
               Login
+            </button>
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn" >
+          <a routerLink="/login" (click)="logout()">
+            <button
+              class="w-24 text-white bg-cod-gray-500 border-cod-gray-500 border-4 rounded-full py-3 md:my-2 lg:mx-4 lg:my-0 font-medium text-base font-poppins">
+              Logout
             </button>
           </a>
         </li>

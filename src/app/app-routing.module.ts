@@ -13,6 +13,7 @@ const routes: Routes = [
     {path: 'discovergyms', component: DiscoverGymsPageComponent , canActivate : [AuthGuard]},
     {path: 'login', component: Login2PageComponent},
 
+
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
 ];
@@ -23,4 +24,4 @@ const routes: Routes = [
 })
 
 export class AppRoutingModule {}
-export const routingComponents=[LoginPageComponent]
+export const routingComponents = [LoginPageComponent];
