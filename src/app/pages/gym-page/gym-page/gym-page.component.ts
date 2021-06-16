@@ -36,6 +36,7 @@ export class GymPageComponent implements OnInit {
     
         this.gymService.getPacks(this.id).subscribe(
           (data) =>{
+            console.log(data);
             this.packs = [...data]
           }
           , (error) =>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import * as mapboxgl from 'mapbox-gl';
 import { MapService } from '../../services/map.service';
 import { GeoJson, FeatureCollection } from '../../../Model/map';
@@ -9,13 +9,13 @@ import { GeoJson, FeatureCollection } from '../../../Model/map';
   templateUrl: './map-box.component.html',
   styleUrls: ['./map-box.component.scss']
 })
-export class MapBoxComponent implements OnInit{
+export class MapBoxComponent implements OnInit, OnChanges{
 
   /// default settings
   map: mapboxgl.Map | any;
   style = 'mapbox://styles/mapbox/streets-v11';
-  @Input() latitude = 0;
-  @Input() longitude = 0;
+  @Input() latitude : number = 10.22;
+  @Input() longitude: number = 10.5488;
   message = 'Hello World!';
 
   // data
@@ -27,9 +27,18 @@ export class MapBoxComponent implements OnInit{
 
   ngOnInit() {
     // this.markers = this.mapService.getMarkers()
-    this.initializeMap()
+    //this.initializeMap()
     console.log('init map');
 
+  }
+  
+  ngOnChanges() {
+    if(this.latitude && this.longitude)
+    {
+      console.log("latitude = " +this.latitude)
+      console.log("longitude = " + this.longitude)
+      this.initializeMap();
+    }
   }
 
   private initializeMap() {
@@ -39,7 +48,7 @@ export class MapBoxComponent implements OnInit{
         this.latitude = position.coords.latitude;
         this.longitude = position.coords.longitude;
         this.map.flyTo({
-          center: [this.latitude, this.longitude]
+          center: [this.longitude, this.latitude]
         })
       });
     }
@@ -53,7 +62,7 @@ export class MapBoxComponent implements OnInit{
       container: 'map',
       style: this.style,
       zoom: 8,
-      center: [this.longitude, this.latitude]
+      center: [this.latitude, this.longitude]
       
     });
 
@@ -65,7 +74,7 @@ export class MapBoxComponent implements OnInit{
     /// Add map controls
     this.map.addControl(new mapboxgl.NavigationControl());
     var marker2 = new mapboxgl.Marker({ color: 'black'})
-    .setLngLat([this.longitude, this.latitude])
+    .setLngLat([this.latitude, this.longitude])
     .addTo(this.map); 
 
     /* Add Marker on Click

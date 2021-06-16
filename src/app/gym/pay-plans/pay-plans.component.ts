@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { Pack } from 'src/Model/Pack';
 
 @Component({
@@ -6,7 +6,7 @@ import { Pack } from 'src/Model/Pack';
   templateUrl: './pay-plans.component.html',
   styleUrls: ['./pay-plans.component.scss']
 })
-export class PayPlansComponent implements OnInit {
+export class PayPlansComponent implements OnInit , OnChanges{
 
   @Input() packs : Pack[] = [];
   @Input() monthly:boolean = true;
@@ -15,6 +15,10 @@ export class PayPlansComponent implements OnInit {
 
   ngOnInit(): void {
     
+  }
+
+  ngOnChanges() {
+    console.log(this.packs)
   }
 
 }
