@@ -1,12 +1,15 @@
-<div class="gym-card">
-    <img height="100" src="https://s7d2.scene7.com/is/image/TWCNews/brooklyn-gym-generic-file-covidjpg?wid=1250&hei=703&$wide-bg$" alt="">
-    <div class="p-5">
-        <h3 class="text-3xl mb-2">California Gym</h3>
-        <div class="flex mb-7">
+<div class="gym-card h-full">
+    <div class="image" [ngStyle]="{'background-image': 'url('+imageUrl+')'}">
+
+    </div>
+    <div class="p-5 content flex flex-col">
+        <h3 class="text-3xl mb-2">{{name}}</h3>
+        <div class="flex mb-7" style="margin-bottom: auto;">
             <i></i>
             <p class="text-xs">Centre Urbain Nord</p>
         </div>
         <!-- <star-rating value="5" totalstars="5" checkedcolor="yellow" uncheckedcolor="white"></star-rating> -->
+
         <star-rating
             [value]="rating"
             [totalstars]="maxRating"
@@ -14,7 +17,9 @@
             [uncheckedcolor]="unCheckedColor"
             size="25"
             [readonly]="true"
+            class="justify-end"
         >
         </star-rating>
+
     </div>
 </div>
