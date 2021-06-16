@@ -1,0 +1,25 @@
+<div class="gym-card h-full">
+    <div class="image" [ngStyle]="{'background-image': 'url('+imageUrl+')'}">
+
+    </div>
+    <div class="p-5 content flex flex-col">
+        <h3 class="text-3xl mb-2">{{name}}</h3>
+        <div class="flex mb-7" style="margin-bottom: auto;">
+            <img src="https://img.icons8.com/small/16/ffffff/marker.png" class="pr-1" />
+            <p class="text-xs">Centre Urbain Nord</p>
+        </div>
+        <!-- <star-rating value="5" totalstars="5" checkedcolor="yellow" uncheckedcolor="white"></star-rating> -->
+
+        <star-rating
+            [value]="rating"
+            [totalstars]="maxRating"
+            [checkedcolor]="checkedColor"
+            [uncheckedcolor]="unCheckedColor"
+            size="25"
+            [readonly]="true"
+            class="justify-end"
+        >
+        </star-rating>
+
+    </div>
+</div>

@@ -1,0 +1,19 @@
+  <app-navbar></app-navbar>
+<app-blog-header [coverImageUrl]="blogs[id -1].coverImageUrl"></app-blog-header>
+<div class="container mx-auto px-4 md:px-12">
+    <div>
+        <h1 class="text-[30px] font-bold text-center mb-2">{{blogs[id -1].title}}</h1>
+        <hr class="w-1/2 mx-auto text-[#777777]" />
+        <div  class="w-3/4 mx-auto font-light mt-10 mb-14">
+            <p class="mb-5">written by <b>{{blogs[id -1].author}}</b></p>
+            {{blogs[id -1].article}}
+        </div>
+        <hr class="text-[#777777]" />
+        <p class="my-5 text-[20px]"><b>Also read</b></p>
+    </div>
+    <div class="mt-5 mb-20">
+        <app-blog-cards-list></app-blog-cards-list>
+    </div>
+
+</div>
+<app-footer></app-footer>

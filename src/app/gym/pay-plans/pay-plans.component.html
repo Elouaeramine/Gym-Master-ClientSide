@@ -1,0 +1,4 @@
+<div class="flex items-center justify-center gap-4 w-full p-8 " >
+	<app-plan *ngFor="let pack of packs" [name] = "pack.name" [price] = "monthly ? pack.price : pack.price*12" [description] = "pack.description" ></app-plan>	
+</div>
+

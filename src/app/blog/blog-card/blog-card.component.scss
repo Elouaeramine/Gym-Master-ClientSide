@@ -1,0 +1,20 @@
+.relative:hover {
+  .hidden {
+    display: block;
+    height: 100%;
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
+}
+
+.content {
+}
+
+.blog-card {
+  height: 22rem;
+}
