@@ -12,6 +12,7 @@ const routes: Routes = [
     {path: 'signup', component: LoginPageComponent},
     {path: 'discovergyms', component: DiscoverGymsPageComponent , canActivate : [AuthGuard]},
     {path: 'login', component: Login2PageComponent},
+    {path: 'gym/:id', component: HomePageComponent},
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }

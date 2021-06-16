@@ -92,6 +92,7 @@ export class GymCardsListComponent implements OnInit {
   constructor() {
     this.gyms = [
       {
+        id:1,
         imageUrl: 'https://img-19.ccm2.net/8vUCl8TXZfwTt7zAOkBkuDRHiT8=/1240x/smart/b829396acc244fd484c5ddcdcb2b08f3/ccmcms-commentcamarche/20494859.jpg',
         name: 'California Gym',
         location: 'Centre Urbain Nord',
@@ -100,6 +101,7 @@ export class GymCardsListComponent implements OnInit {
         openOnWeekends: [{ value: 'Yes' }]
       },
       {
+        id:2,
         imageUrl: 'https://img-19.ccm2.net/8vUCl8TXZfwTt7zAOkBkuDRHiT8=/1240x/smart/b829396acc244fd484c5ddcdcb2b08f3/ccmcms-commentcamarche/20494859.jpg',
         name: 'Oxygéne',
         location: 'Aouina',
@@ -108,6 +110,7 @@ export class GymCardsListComponent implements OnInit {
         openOnWeekends: [{ value: 'Yes' }]
       },
       {
+        id:3,
         imageUrl: 'https://img-19.ccm2.net/8vUCl8TXZfwTt7zAOkBkuDRHiT8=/1240x/smart/b829396acc244fd484c5ddcdcb2b08f3/ccmcms-commentcamarche/20494859.jpg',
         name: 'California Gym',
         location: 'Centre Urbain Nord',
@@ -116,6 +119,7 @@ export class GymCardsListComponent implements OnInit {
         openOnWeekends: [{ value: 'Yes' }]
       },
       {
+        id:4,
         imageUrl: 'https://img-19.ccm2.net/8vUCl8TXZfwTt7zAOkBkuDRHiT8=/1240x/smart/b829396acc244fd484c5ddcdcb2b08f3/ccmcms-commentcamarche/20494859.jpg',
         name: 'Oxygéne',
         location: 'Aouina',
@@ -124,6 +128,7 @@ export class GymCardsListComponent implements OnInit {
         openOnWeekends: [{ value: 'No' }]
       },
       {
+        id:5,
         imageUrl: 'https://img-19.ccm2.net/8vUCl8TXZfwTt7zAOkBkuDRHiT8=/1240x/smart/b829396acc244fd484c5ddcdcb2b08f3/ccmcms-commentcamarche/20494859.jpg',
         name: 'California Gym',
         location: 'Centre Urbain Nord',
@@ -132,6 +137,7 @@ export class GymCardsListComponent implements OnInit {
         openOnWeekends: [{ value: 'No' }]
       },
       {
+        id:6,
         imageUrl: 'https://img-19.ccm2.net/8vUCl8TXZfwTt7zAOkBkuDRHiT8=/1240x/smart/b829396acc244fd484c5ddcdcb2b08f3/ccmcms-commentcamarche/20494859.jpg',
         name: 'Fitness Gym',
         location: 'Tunis',
@@ -140,6 +146,7 @@ export class GymCardsListComponent implements OnInit {
         openOnWeekends: [{ value: 'No' }]
       },
       {
+        id:7,
         imageUrl: 'https://img-19.ccm2.net/8vUCl8TXZfwTt7zAOkBkuDRHiT8=/1240x/smart/b829396acc244fd484c5ddcdcb2b08f3/ccmcms-commentcamarche/20494859.jpg',
         name: 'Fitness Gym',
         location: 'Tunis',
@@ -148,6 +155,7 @@ export class GymCardsListComponent implements OnInit {
         openOnWeekends: [{ value: 'No' }]
       },
       {
+        id:8,
         imageUrl: 'https://img-19.ccm2.net/8vUCl8TXZfwTt7zAOkBkuDRHiT8=/1240x/smart/b829396acc244fd484c5ddcdcb2b08f3/ccmcms-commentcamarche/20494859.jpg',
         name: 'Lady Gym',
         location: 'La Marsa',
@@ -156,6 +164,7 @@ export class GymCardsListComponent implements OnInit {
         openOnWeekends: [{ value: 'Yes' }]
       },
       {
+        id:9,
         imageUrl: 'https://img-19.ccm2.net/8vUCl8TXZfwTt7zAOkBkuDRHiT8=/1240x/smart/b829396acc244fd484c5ddcdcb2b08f3/ccmcms-commentcamarche/20494859.jpg',
         name: 'Panda Gym',
         location: 'El Mourouj',
