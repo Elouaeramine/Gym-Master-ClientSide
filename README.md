@@ -1,14 +1,18 @@
-# GymMaster
+<p align="center">
+  <a href="#"><img src="https://i.ibb.co/Syxz2kL/Group-1791.png" alt="Group-1791" border="0" /></a>
+</p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.4.
+[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
+[circleci-url]: https://circleci.com/gh/nestjs/nest
 
-## Development server
+## Description
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Gym Master allows users to find a gym according to their preferences. 
+( Location , Name , Packs ) and more criterias by creating accounts and browsing gyms . 
+Users  can also read Fitness blogs.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+FrontEnd Repository : 
+https://github.com/Elouaeramine/Gym-Master-Backend
 
 ## Build
 
