@@ -13,7 +13,7 @@ export class HomePageComponent implements OnInit {
 
 
   gyms: GymHome[] = [] ;
-  blogs: Blog[] = []
+  blogs: number[] = [1, 2, 3]
 
   constructor( private gymService :GymService, private blogService : BlogService) { }
 
