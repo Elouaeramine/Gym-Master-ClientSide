@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Pack } from 'src/Model/Pack';
 
 @Component({
   selector: 'app-pay-plans',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PayPlansComponent implements OnInit {
 
+  @Input() packs : Pack[] = [];
+  @Input() monthly:boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

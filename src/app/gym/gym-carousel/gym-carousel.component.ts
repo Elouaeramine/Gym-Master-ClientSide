@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { SwiperOptions } from 'swiper';
 
 @Component({
@@ -7,6 +7,8 @@ import { SwiperOptions } from 'swiper';
   styleUrls: ['./gym-carousel.component.scss']
 })
 export class GymCarouselComponent implements OnInit {
+
+  @Input() imageURL: string = '';
 
   constructor() {
    
@@ -29,13 +31,6 @@ export class GymCarouselComponent implements OnInit {
     },
     spaceBetween: 30
   };  
-
-  Images: Array<String> = [
-    'https://loremflickr.com/g/800/1200/paris',
-     
-    'https://loremflickr.com/800/1200/brazil,rio',
-    'https://loremflickr.com/800/1200/paris,girl/all'
-  ]
 
 
 }

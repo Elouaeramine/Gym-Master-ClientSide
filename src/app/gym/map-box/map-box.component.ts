@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import * as mapboxgl from 'mapbox-gl';
 import { MapService } from '../../services/map.service';
 import { GeoJson, FeatureCollection } from '../../../Model/map';
@@ -14,8 +14,8 @@ export class MapBoxComponent implements OnInit{
   /// default settings
   map: mapboxgl.Map | any;
   style = 'mapbox://styles/mapbox/streets-v11';
-  lat = 37.75;
-  lng = -122.41;
+  @Input() latitude = 0;
+  @Input() longitude = 0;
   message = 'Hello World!';
 
   // data
@@ -36,10 +36,10 @@ export class MapBoxComponent implements OnInit{
     /// locate the user
     if (navigator.geolocation) {
        navigator.geolocation.getCurrentPosition(position => {
-        this.lat = position.coords.latitude;
-        this.lng = position.coords.longitude;
+        this.latitude = position.coords.latitude;
+        this.longitude = position.coords.longitude;
         this.map.flyTo({
-          center: [this.lng, this.lat]
+          center: [this.latitude, this.longitude]
         })
       });
     }
@@ -53,7 +53,7 @@ export class MapBoxComponent implements OnInit{
       container: 'map',
       style: this.style,
       zoom: 8,
-      center: [this.lng, this.lat]
+      center: [this.longitude, this.latitude]
       
     });
 
@@ -65,7 +65,7 @@ export class MapBoxComponent implements OnInit{
     /// Add map controls
     this.map.addControl(new mapboxgl.NavigationControl());
     var marker2 = new mapboxgl.Marker({ color: 'black'})
-    .setLngLat([12.65147, 55.608166])
+    .setLngLat([this.longitude, this.latitude])
     .addTo(this.map); 
 
     /* Add Marker on Click
