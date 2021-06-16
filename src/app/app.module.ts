@@ -21,6 +21,8 @@ import { GymCardComponent } from './DiscGyms/gym-card/gym-card.component';
 import { GymCardsListComponent } from './DiscGyms/gym-cards-list/gym-cards-list.component';
 import { Login2Component } from './login2/login2.component';
 import { Login2PageComponent } from './pages/login2-page/login2-page.component';
+import {MatIconModule} from '@angular/material/icon';
+import { StarRateModule } from 'ng-star-rate';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { ToastrModule } from 'ngx-toastr';
 
@@ -42,7 +44,6 @@ import { ToastrModule } from 'ngx-toastr';
     GymCardsListComponent,
     Login2Component,
     Login2PageComponent
-
   ],
   imports: [
     BrowserModule,
@@ -52,6 +53,8 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserAnimationsModule,
     MatSelectModule,
     AppRoutingModule,
+    MatIconModule,
+    StarRateModule,
     HttpClientModule,
     ToastrModule.forRoot()
   ],

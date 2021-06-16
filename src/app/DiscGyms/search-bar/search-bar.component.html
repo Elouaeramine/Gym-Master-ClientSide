@@ -1,38 +1,39 @@
 <div class="container relative flex flex-wrap mx-auto overflow-hidden self-center
-my-24 mx-auto border-4 border-cod-gray-500
+my-24 mx-auto border-4 border-[#000000]
 sm:w-2/3 md:w-2/3 lg:w-3/5    
-sm:rounded-2xl md:rounded-2xl lg:rounded-t-full lg:rounded-bl-full">
+sm:rounded-2xl md:rounded-2xl lg:rounded-t-full lg:rounded-bl-full xl:rounded-t-full xl:rounded-bl-full">
     <form>
         <div class="row">
             <div class="grid grid-cols-6">
                 <div class="py-4
-                    lg:ml-8 md:ml-32 sm:ml-8 
-                    lg:col-span-2 md:col-span-6 sm:col-span-6 ">
+                    xl:ml-8 lg:ml-8 md:ml-32 sm:ml-8 
+                    xl:col-span-2 lg:col-span-2 md:col-span-6 sm:col-span-6 ">
                     <li class="text-sm font-poppins">Name</li>
                     <input
                         class="appearance-none bg-transparent border-none w-full text-gray-700  py-1 px-2 leading-tight focus:outline-none"
-                        type="text" placeholder="Name">
+                        type="text" placeholder="Name" #name>
                 </div>
                 <div class="py-4 
-                    lg:ml-32 md:ml-32 sm:ml-8 
-                     lg:col-span-2 md:col-span-6 sm:col-span-6">
+                    xl:ml-32 lg:ml-32 md:ml-32 sm:ml-8 
+                    xl:col-span-2 lg:col-span-2 md:col-span-6 sm:col-span-6">
                     <li class="text-sm font-poppins">Location</li>
                     <select
-                        class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-                        id="">
-                        <option hidden>Choose location</option>
-                        <option>Example one</option>
-                        <option>Example one</option>
-                        <option>Example one</option>
-                        <option>Example one</option>
-                        <option>Example one</option>
-                        <option>Example one</option>
+                        class="appearance-none bg-transparent border-none w-full mr-3 py-1 px-2 leading-tight focus:outline-none"
+                        id="" #location>
+                        <option value="" hidden class="text-gray-700 font-poppins">Choose location</option>
+                        <option class="font-poppins">Centre Urbain Nord</option>
+                        <option class="font-poppins">La Marsa</option>
+                        <option class="font-poppins">Centre Ville</option>
+                        <option class="font-poppins">El Mourouj</option>
+                        <option class="font-poppins">El Menzah</option>
+                        <option class="font-poppins">Aouina</option>
                     </select>
                 </div>
-                <button type="button" class="self-right text-white bg-cod-gray-500 font-medium text-base font-poppins
+                <button type="button" class="text-white bg-[#000000] font-medium text-lg font-poppins
+                        xl:mx-28 xl:w-64 xl:h-20 xl:col-span-2 xl:rounded-t-full xl:rounded-bl-full 
                         lg:mx-28 lg:w-48 lg:h-20 lg:col-span-2 lg:rounded-t-full lg:rounded-bl-full
                         md:mx-24 md:col-span-6 md:w-full
-                        sm:mx-24 sm:rounded-t-2xl sm:col-span-6 sm:w-full">
+                        sm:mx-24 sm:rounded-t-2xl sm:col-span-6 sm:w-full" (click)="onSearch()">
                     Search
                 </button>
             </div>
