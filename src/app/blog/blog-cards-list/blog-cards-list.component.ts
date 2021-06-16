@@ -21,7 +21,7 @@ export class BlogCardsListComponent implements OnInit {
       (error) =>{
         console.log('Error Occured ', error);
       }
-    );
+    )
   }
 
 }

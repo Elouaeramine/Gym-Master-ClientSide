@@ -16,6 +16,8 @@ export class BlogCardComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
+
+
   ngOnInit(): void {
     this.activatedRoute.snapshot.params['id'];
   }

@@ -1,5 +1,6 @@
+import { ActivatedRoute } from '@angular/router';
 import { BlogService } from './../../services/blog.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { Blog } from 'src/Model/Blog';
 
 @Component({
@@ -7,12 +8,15 @@ import { Blog } from 'src/Model/Blog';
   templateUrl: './blog-page.component.html',
   styleUrls: ['./blog-page.component.scss']
 })
-export class BlogPageComponent implements OnInit {
+export class BlogPageComponent implements OnInit , OnChanges{
+
+  id: number = 0 ;
 
   blogs : Blog[] = [];
-  constructor(private blogService : BlogService) { }
+    constructor(private blogService : BlogService, private activatedRoute : ActivatedRoute) { }
 
   ngOnInit(): void {
+
     this.blogService.getBlogs().subscribe(
       (data)=> {
         this.blogs =[...data];
@@ -21,7 +25,11 @@ export class BlogPageComponent implements OnInit {
       (error) =>{
         console.log('Error Occured ', error);
       }
-    )
+      )
+      this.id = this.activatedRoute.snapshot.params['id'];
+  }
+
+  ngOnChanges(){
   }
 
 }
