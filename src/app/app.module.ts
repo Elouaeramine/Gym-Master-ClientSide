@@ -1,3 +1,4 @@
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -32,6 +33,14 @@ import { PlanComponent } from './gym/plan/plan.component';
 import { PayPlansComponent } from './gym/pay-plans/pay-plans.component';
 import { ReviewComponent } from './gym/review/review.component';
 import { ReviewsComponent } from './gym/reviews/reviews.component';
+import { Login2Component } from './login2/login2.component';
+import { Login2PageComponent } from './pages/login2-page/login2-page.component';
+import {MatIconModule} from '@angular/material/icon';
+import { StarRateModule } from 'ng-star-rate';
+import { JwtInterceptor } from './helpers/jwt.interceptor';
+import { ToastrModule } from 'ngx-toastr';
+import { GymCardComponent as GymCard }  from './shared/gym-card/gym-card.component';
+import { RatingModule } from 'ng-starrating';
 
 @NgModule({
   declarations: [
@@ -49,7 +58,6 @@ import { ReviewsComponent } from './gym/reviews/reviews.component';
     DicoverGymsHeaderComponent,
     HomePageComponent,
     GymCardsListComponent,
-
     BlogPageComponent,
       BlogCardComponent,
       BlogCardsListComponent,
@@ -62,8 +70,9 @@ import { ReviewsComponent } from './gym/reviews/reviews.component';
       PayPlansComponent,
       ReviewComponent,
       ReviewsComponent,
-
-
+    Login2Component,
+    Login2PageComponent,
+    GymCard
   ],
   imports: [
     BrowserModule,
@@ -74,8 +83,16 @@ import { ReviewsComponent } from './gym/reviews/reviews.component';
     MatSelectModule,
     AppRoutingModule,
     NgxUsefulSwiperModule
+    MatIconModule,
+    StarRateModule,
+    HttpClientModule,
+    ToastrModule.forRoot(),
+    RatingModule
   ],
-  providers: [MapService],
+  providers: [
+    MapService,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

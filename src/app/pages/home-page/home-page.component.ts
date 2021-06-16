@@ -1,4 +1,8 @@
+import { GymService } from './../../services/gym.service';
+import { BlogService } from './../../services/blog.service';
 import { Component, OnInit } from '@angular/core';
+import { GymHome } from 'src/Model/GymHome';
+import { Blog } from 'src/Model/Blog';
 
 @Component({
   selector: 'app-home-page',
@@ -7,9 +11,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
+
+  gyms: GymHome[] = [] ;
+  blogs: number[] = [1, 2, 3]
+
+  constructor( private gymService :GymService, private blogService : BlogService) { }
 
   ngOnInit(): void {
+    this.gymService.getGyms().subscribe(
+      (data) => {
+        this.gyms = [...data];
+
+        console.log(this.gyms);
+
+
+      },
+      (error) => {
+        console.log('Error Occured');
+      }
+    );
+
   }
 
 }

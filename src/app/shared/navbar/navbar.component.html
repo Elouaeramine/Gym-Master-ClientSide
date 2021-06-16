@@ -1,41 +1,59 @@
-<nav class="relative flex flex-row items-center justify-between p-0 bg-white mb-3  mx-0 w-full ">
-
-    <div class="relative flex  justify-between lg:w-auto lg:static lg:justify-start ">
-
-        <!-- <svg width="200" height="200"> -->
-          <svg class="h-24 m-0 p-0 w-min flex-1 justify-self-start  transform scale-75" xmlns="http://www.w3.org/2000/svg" width="463" height="89" viewBox="0 0 -100 -100"><defs><style>.a,.b{fill:#181818;}.a{font-size:50px;font-family:Poppins-Bold, Poppins;font-weight:700;}</style></defs><g transform="translate(-147 -39)"><text class="a" transform="translate(296 99)"><tspan x="0" y="0">Gym Master</tspan></text><g transform="translate(-4336 -1162)"><rect class="b" width="16" height="88" rx="8" transform="translate(4569 1201)"/><rect class="b" width="17" height="59" rx="8.5" transform="translate(4588 1216)"/><rect class="b" width="16" height="88" rx="8" transform="translate(4503 1202)"/><rect class="b" width="17" height="59" rx="8.5" transform="translate(4483 1217)"/><rect class="b" width="16" height="43" rx="8" transform="translate(4566 1239) rotate(90)"/></g></g></svg>
-
+<nav class="relative flex flex-wrap items-center justify-between px-2 py-3 bg-white mb-3 ">
+  <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
+    <div class="w-full relative flex justify-between lg:w-auto px-4 lg:static lg:block lg:justify-start">
+      <div
+        class="flex items-center flex-shrink-0 text-white mr-6">
+        <img src="assets/GymMasterLogo.jpg" class="w-12">
+        <span
+          class="font-semibold text-3xl font-bold text-cod-gray-500 font-poppins leading-relaxed inline-block mx-4 whitespace-nowrap">
+          GYM MASTER
+        </span>
+      </div>
+      <button
+        class="text-cod-gray-500 cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+        type="button" (click)="toggleNavbar()">
+        <!-- <i class="fas fa-bars"></i> -->
+        <mat-icon>horizontal_split</mat-icon>
+      </button>
     </div>
-    <div [ngClass]="{'hidden': !showMenu, 'flex': showMenu}" class="lg:flex lg:flex-grow items-center w-screen p-0">
+    <div [ngClass]="{'hidden': !showMenu, 'flex': showMenu}" class="lg:flex lg:flex-grow items-center">
       <ul class="flex flex-col lg:flex-row list-none ml-auto">
         <li class="nav-item">
-          <a class="px-3 py-2 flex items-center text-lg font-poppins leading-snug text-cod-gray-500 hover:underline" href="/home">
+          <a class="px-3 py-2 flex items-center text-lg font-poppins leading-snug text-cod-gray-500 hover:underline"
+          routerLink="/">
             <span class="ml-2 lg:my-2">Home</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="px-3 py-2 flex items-center text-lg font-poppins leading-snug text-cod-gray-500 hover:underline" href="/discovergyms">
+          <a class="px-3 py-2 flex items-center text-lg font-poppins leading-snug text-cod-gray-500 hover:underline"
+          routerLink="/discovergyms" routerLinkActive="active">
             <span class="ml-2 lg:my-2">Discover Gyms</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="px-3 py-2 flex items-center text-lg font-poppins leading-snug text-cod-gray-500 hover:underline" href="/blog">
+          <a class="px-3 py-2 flex items-center text-lg font-poppins leading-snug text-cod-gray-500 hover:underline"
+          routerLink="/blog">
             <span class="ml-2 lg:my-2">Blog</span>
           </a>
         </li>
         <li class="nav-item">
-          <a href="/signup">
-            <button class="w-24 text-black bg-white border-cod-gray-500 border-4 rounded-full py-3 md:my-2 lg:mx-4 lg:my-0 font-medium text-base font-poppins">
-            Sign Up
-         </button>
-        </a>
-         </li>
-         <li class="nav-item">
-        <button class="w-24 text-white bg-cod-gray-500 border-cod-gray-500 border-4 rounded-full py-3 md:my-2 lg:mx-4 lg:my-0 font-medium text-base font-poppins">
-           Login
-        </button>
+          <a routerLink="/signup">
+            <button
+              class="w-24 text-black bg-white border-cod-gray-500 border-4 rounded-full py-3 md:my-2 lg:mx-4 lg:my-0 font-medium text-base font-poppins">
+              Sign Up
+            </button>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/login">
+            <button
+              class="w-24 text-white bg-cod-gray-500 border-cod-gray-500 border-4 rounded-full py-3 md:my-2 lg:mx-4 lg:my-0 font-medium text-base font-poppins">
+              Login
+            </button>
+          </a>
         </li>
       </ul>
     </div>
-
+  </div>
 </nav>
+
