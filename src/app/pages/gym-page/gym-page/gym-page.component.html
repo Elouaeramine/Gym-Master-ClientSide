@@ -1,13 +1,13 @@
 <app-navbar></app-navbar>
-<app-gym-carousel></app-gym-carousel>
+<app-gym-carousel [imageURL] = "gym.imageUrl"></app-gym-carousel>
 <div class=" p-8 mx-auto md:px-12">
-        <h1 class="text-[40px] font-bold text-center  md:text-center ">Galaxy Gym</h1>
+        <h1 class="text-[40px] font-bold text-center  md:text-center ">{{gym.name}}</h1>
         <div class=" flex align-items-center justify-center">
             <img  class=" transform scale-50" src="\assets\images\pin.png" alt="">
             <p class=" text-[12px] text-[#777777] md:text-center mb-0">Centre Urbain Nord</p> 
         </div>
 </div>
-<app-map-box></app-map-box>
+<app-map-box [latitude]="gym.latitude" [longitude]="gym.longitude"></app-map-box>
 <div class=" p-4">
     <h1 class="text-[25px] font-bold text-center  md:text-center ">Activities</h1>
     <div class="border-2 bg-[#000] w-14 mx-auto "></div>
@@ -30,7 +30,7 @@
 </div>
 <p class="px-2" [ngClass]="{'font-bold': isChecked, 'font-normal': !isChecked}">Monthly Plan</p> 
 </div>
-<app-pay-plans></app-pay-plans>
+<app-pay-plans [packs]="packs" [monthly]="isChecked"></app-pay-plans>
 <div class="flex items-center ">
     <div class=" p-4">
         <h1 class="text-[25px] font-bold   ">What do other people say ?</h1>
