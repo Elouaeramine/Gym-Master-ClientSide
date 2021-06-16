@@ -1,34 +1,3 @@
-<div class="container my-12 mx-auto px-4 md:px-12">
-
-<!-- <div class="grid grid-cols-3 place-items-end"> -->
-<div class="flex flex-wrap -mx-1 lg:-mx-4">
-    <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
-        <app-gym-card></app-gym-card>
-    </div>
-    <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
-        <app-gym-card></app-gym-card>
-    </div>
-    <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
-        <app-gym-card></app-gym-card>
-    </div>
-    <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
-        <app-gym-card></app-gym-card>
-    </div>
-    <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
-        <app-gym-card></app-gym-card>
-    </div>
-    <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
-        <app-gym-card></app-gym-card>
-    </div>
-    <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
-        <app-gym-card></app-gym-card>
-    </div>
-    <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
-        <app-gym-card></app-gym-card>
-    </div>
-    <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
-        <app-gym-card></app-gym-card>
-    </div>
-</div>    
+<div class="grid md:mx-36 lg:mx-auto md:grid-cols-2 lg:grid-cols-3 p-8 gap-8">
+    <app-gym-card *ngFor="let gym of gyms" [data]="gym" [hidden]="!show(gym,searchedName,searchedLocation,sideFilter)" ></app-gym-card>
 </div>
-

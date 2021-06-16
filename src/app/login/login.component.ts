@@ -20,13 +20,14 @@ log(x: any) { console.log(x); }
 register (loginForm: NgForm){
   if (loginForm.valid) {
     console.log("Form Submitted!");
+    this.usersService.register(loginForm.value)
     loginForm.reset();
   }
 }
 
 addUser(loginForm: NgForm){
   // console.log(loginForm.value);
-  this.usersService.addUser(loginForm.value); 
+  this.usersService.addUser(loginForm.value);
 }
 
 getUsers() {

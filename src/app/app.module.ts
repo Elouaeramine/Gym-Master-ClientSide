@@ -1,3 +1,4 @@
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -22,6 +23,14 @@ import { BlogPageComponent } from './pages/blog-page/blog-page.component';
 import { BlogCardComponent } from './blog/blog-card/blog-card.component';
 import { BlogCardsListComponent } from './blog/blog-cards-list/blog-cards-list.component';
 import { BlogHeaderComponent } from './shared/header/blog-header/blog-header.component';
+import { Login2Component } from './login2/login2.component';
+import { Login2PageComponent } from './pages/login2-page/login2-page.component';
+import {MatIconModule} from '@angular/material/icon';
+import { StarRateModule } from 'ng-star-rate';
+import { JwtInterceptor } from './helpers/jwt.interceptor';
+import { ToastrModule } from 'ngx-toastr';
+import { GymCardComponent as GymCard }  from './shared/gym-card/gym-card.component';
+import { RatingModule } from 'ng-starrating';
 
 @NgModule({
   declarations: [
@@ -39,12 +48,13 @@ import { BlogHeaderComponent } from './shared/header/blog-header/blog-header.com
     DicoverGymsHeaderComponent,
     HomePageComponent,
     GymCardsListComponent,
-
     BlogPageComponent,
       BlogCardComponent,
       BlogCardsListComponent,
-      BlogHeaderComponent
-    
+      BlogHeaderComponent,
+    Login2Component,
+    Login2PageComponent,
+    GymCard
   ],
   imports: [
     BrowserModule,
@@ -53,9 +63,16 @@ import { BlogHeaderComponent } from './shared/header/blog-header/blog-header.com
     ValidateEqualModule,
     BrowserAnimationsModule,
     MatSelectModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatIconModule,
+    StarRateModule,
+    HttpClientModule,
+    ToastrModule.forRoot(),
+    RatingModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
